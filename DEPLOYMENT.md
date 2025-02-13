@@ -108,8 +108,8 @@ npm ci
 indico setup wizard --dev
 ```
 
-Пример дефолтных настроек V
 <details>
+<summary>Пример дефолтных настроек</summary>
 
 ```bash
 Indico root path: /projects

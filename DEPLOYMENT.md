@@ -1,5 +1,6 @@
 # Инструкция по локальному развертыванию `indico`
 ## 1. Установить необходимые зависимости
+### Ubuntu
 ```bash
 # различные библиотеки, redis, postgres, sqlite
 sudo apt update
@@ -9,12 +10,29 @@ sudo apt install -y --install-recommends libxslt1-dev libxml2-dev \
     libpango1.0-dev libffi-dev libpcre3-dev libsqlite3-dev \
     postgresql-client-common
 ```
+
 ```bash
 sudo apt install -y libjpeg-turbo8-dev zlib1g-dev
 ```
 
+### Arch
+```bash
+sudo pacman -S --needed libxslt libxml2 libyaml base-devel redis postgresql postgresql-libs pango libffi pcre sqlite
+```
+
+```bash
+sudo pacman -S libjpeg-turbo zlib
+
+# Убеждаемся, что зависимости к этим пакетам есть
+pacman -Qs libjpeg-turbo zlib
+
+# Если какие-то пакеты не установились
+yay -S <Пакет>
+```
+
 ## 2. Установить `pyenv` (менеджер версий питона)
 1. Установить `pyenv`
+### Ubuntu
 ```bash
 # установить необходимые зависимости
 sudo apt install -y make build-essential libssl-dev zlib1g-dev \
@@ -23,9 +41,21 @@ sudo apt install -y make build-essential libssl-dev zlib1g-dev \
     liblzma-dev python3-openssl git
 ```
 
+### Arch
 ```bash
-# установить pyenv
+sudo pacman -S base-devel openssl zlib bzip2 readline sqlite wget curl llvm ncurses xz tk libffi xz git python
+
+# Если установка не прошла, обновляем зеркала и репозитории
+sudo pacman-mirrors --fasttrack
+sudo pacman -Syy
+```
+
+```bash
+# установить pyenv через curl (доверяем свою судьбу честности разработчика)
 curl https://pyenv.run | bash
+
+# 2 Вариант: собираем с гита
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 ```
 
 2. Настроить `pyenv` локально
@@ -88,6 +118,19 @@ sudo -u postgres createuser $USER --createdb
 sudo -u postgres createdb indico_template -O $USER
 sudo -u postgres psql indico_template -c "CREATE EXTENSION unaccent; CREATE EXTENSION pg_trgm;"
 createdb indico -T indico_template
+```
+
+### Если получаем ошибку об отсутствии пользователя postgres
+```bash
+useradd postgres
+# Или
+sudo useradd postgres
+```
+
+### Если получаем ошибку об отсутствии сокета postgres
+```bash
+sudo -iu postgres initdb --locale=C.UTF-8 --encoding=UTF8 -D '/var/lib/postgres/data'
+sudo systemctl restart postgresql
 ```
 
 ## 7. Собрать конфигурацию Indico
@@ -155,3 +198,10 @@ indico i18n compile indico
 ```bash
 indico run -h localhost -q --enable-evalex
 ```
+
+
+> Если не подгружаются данные из бд запускаем сервисы
+> ```bash
+> sudo systemctl start postgresql
+> sudo systemctl start redis
+> ```

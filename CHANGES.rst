@@ -30,6 +30,13 @@ Improvements
 - Add a new setting (:data:`ALLOW_ADMIN_USER_DELETION`) to let administrators permanently
   delete Indico users from the user management UI (:pr:`6652`, thanks :user:`SegiNyn`)
 - Support ``==text==`` to highlight text in markdown (:issue:`6731`, :pr:`6732`)
+- Add an event setting to allow enforcing search before entering a person manually to
+  a persons list in abstracts and contributions (:pr:`6689`)
+- Allow users to login using their email address (:pr:`6522`, thanks :user:`SegiNyn`)
+- Do not "inline" the full participant list in conference events using a meeting-style
+  timetable and link to the conference participant list instead (:pr:`6753`)
+- Add new setting :data:`LOCAL_USERNAMES` to disable usernames for logging in and only
+  use the email address (:pr:`6751`)
 
 Bugfixes
 ^^^^^^^^
@@ -47,6 +54,9 @@ Bugfixes
   (:pr:`6730`)
 - Fix the usage of select list scrollbar causing it to close immediately (:issue:`6735`,
   :pr:`6736`, thanks :user:`foxbunny`)
+- Trigger event creation notification emails when cloning events (:pr:`6744`)
+- Fix image uploading not working when editing an existing note without having permissions
+  to manage materials on the event level (:pr:`6760`)
 
 Accessibility
 ^^^^^^^^^^^^^

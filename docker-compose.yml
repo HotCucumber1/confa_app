@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: indico-web
+    ports:
+      - "8000:8000"  # Пробрасываем порт Indico
+    environment:
+      - INDICO_DB_URI=postgresql://indico:indico@db/indico
+      - INDICO_REDIS_URI=redis://redis:6379/0
+    depends_on:
+      - db
+      - redis
+    volumes:
+      - ./indico/indico.conf:/app/indico.conf  # Конфигурационный файл Indico
+      - ./data:/app/data  # Данные Indico
+
+  db:
+    image: postgres:13
+    container_name: indico-db
+    environment:
+      POSTGRES_USER: indico
+      POSTGRES_PASSWORD: indico
+      POSTGRES_DB: indico
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # Сохраняем данные БД
+      - ./bin/init-db.sh:/docker-entrypoint-initdb.d/init-db.sh  # Скрипт инициализации БД
+
+  redis:
+    image: redis:6
+    container_name: indico-redis
+    volumes:
+      - redis_data:/data  # Сохраняем данные Redis
+
+volumes:
+  postgres_data:
+  redis_data:

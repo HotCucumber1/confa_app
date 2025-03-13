@@ -6,7 +6,7 @@
 
 <style>
     @page {
-        size: 'A4';
+        size: A4;
         margin: 10mm;
     }
 
@@ -34,7 +34,7 @@
             @top-right {
                 font-size: 0.8em;
                 color: grey;
-                content: '{{ day|format_skeleton('EEEEdMMMM', timezone=event.timezone) }}';
+                content: '{{ day|format_skeleton('EEEEdMMMM') }}';
             }
         }
 

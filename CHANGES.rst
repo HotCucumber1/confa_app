@@ -7,6 +7,20 @@ Version 3.3.6
 
 *Unreleased*
 
+Security fixes
+^^^^^^^^^^^^^^
+
+- Update the `Jinja2 <https://pypi.org/project/Jinja2/>`__ library due to a
+  sandbox escape vulnerability (:cve:`2025-27516`).
+
+.. note::
+
+    Since document templates can only be managed by Indico admins (unless granted to
+    specific other trusted users as well), the impact of this vulnerability is considered
+    low to medium, as it would require a malicious admin to abuse this e.g. to to read
+    ``indico.conf`` data, which is otherwise only accessible to people with direct server
+    access.
+
 Improvements
 ^^^^^^^^^^^^
 
@@ -29,7 +43,7 @@ Improvements
 - Improve the appearance of the date pickers (:issue:`6719`, :pr:`6720`, thanks :user:`foxbunny`)
 - Add a new setting (:data:`ALLOW_ADMIN_USER_DELETION`) to let administrators permanently
   delete Indico users from the user management UI (:pr:`6652`, thanks :user:`SegiNyn`)
-- Support ``==text==`` to highlight text in markdown (:issue:`6731`, :pr:`6732`)
+- Support ``==text==`` to highlight text in markdown (:issue:`6731`, :pr:`6732, 6767`)
 - Add an event setting to allow enforcing search before entering a person manually to
   a persons list in abstracts and contributions (:pr:`6689`)
 - Allow users to login using their email address (:pr:`6522`, thanks :user:`SegiNyn`)
@@ -37,6 +51,15 @@ Improvements
   timetable and link to the conference participant list instead (:pr:`6753`)
 - Add new setting :data:`LOCAL_USERNAMES` to disable usernames for logging in and only
   use the email address (:pr:`6751`)
+- Tell search engines to not index events marked as "invisible" (:pr:`6762`, thanks
+  :user:`openprojects`)
+- Make the minimum length of local account passwords configurable, and default to ``15``
+  instead of ``8`` for new installations (:issue:`6629`, :pr:`6740`, thanks :user:`amCap1712`)
+- Include submitter email in abstract PDF export (:issue:`3631`, :pr:`6748`, thanks
+  :user:`amCap1712`)
+- Remove anonymized users from local groups (:pr:`6738`, thanks :user:`SegiNyn`)
+- Add ACLs for room booking locations which can grant privileges on the location itself
+  and/or all its rooms (:pr:`6566`, thanks :user:`SegiNyn`)
 
 Bugfixes
 ^^^^^^^^
@@ -57,6 +80,14 @@ Bugfixes
 - Trigger event creation notification emails when cloning events (:pr:`6744`)
 - Fix image uploading not working when editing an existing note without having permissions
   to manage materials on the event level (:pr:`6760`)
+- Do not redirect to the ToS acceptance page when impersonating a user (:pr:`6770`)
+- Fix display issues after reacting to a favorite category suggestion (:pr:`6771`)
+- Include event labels in dashboard ICS export (:issue:`5886, 6372`, :pr:`6769`, thanks
+  :user:`amCap1712`)
+- Do not show default values for purged registration fields (:issue:`5898`, :pr:`6772`,
+  thanks :user:`amCap1712`)
+- Do not create empty survey sections during event cloning (:pr:`6774`)
+- Fix inaccurate timezone in the dates of the timetable PDF (:pr:`6786`)
 
 Accessibility
 ^^^^^^^^^^^^^
@@ -66,13 +97,22 @@ Accessibility
 - Implement a new date range picker and use it in the Room Booking module
   (:pr:`6464`, thanks :user:`foxbunny`)
 - Make main section title in the base layout the default bypass blocks target
-  (:pr:`6726`, hanks :user:`foxbunny`)
+  (:pr:`6726`, thanks :user:`foxbunny`)
+- Improve places selection accessibility in SingleChoiceInput
+  (:pr:`6763`, thanks :user:`foxbunny`)
+- Improve places selection accessibility in MultiChoiceInput
+  (:pr:`6764`, thanks :user:`foxbunny`)
+- Improve BooleanInput accessibility (:pr:`6756`, thanks :user:`foxbunny`)
+- Improve keyboard navigation order within the category list page
+  (:pr:`6776`, thanks :user:`foxbunny`)
 
 Internal Changes
 ^^^^^^^^^^^^^^^^
 
 - Remove the `marshmallow-enum` dependency (:issue:`6701`, :pr:`6703`, thanks
   :user:`federez-tba`)
+- Add new signals during signup email validation and login which can make the
+  process fail with a custom message (:pr:`6759`, thanks :user:`openprojects`)
 
 
 Version 3.3.5
@@ -187,7 +227,7 @@ Security fixes
   process, so it can only target newly created (and thus unprivileged) Indico users.
   We consider this vulnerability to be of "medium" severity since the ability to abuse
   this is somewhat limited, but you should update as soon as possible nonetheless
-  (:cve:`CVE-2024-45399`)
+  (:cve:`2024-45399`)
 
 Internationalization
 ^^^^^^^^^^^^^^^^^^^^
@@ -640,7 +680,7 @@ Security fixes
 ^^^^^^^^^^^^^^
 
 - Update `Werkzeug <https://pypi.org/project/Werkzeug/>`__ library due to a
-  DoS vulnerability while parsing certain file uploads (:cve:`CVE-2023-46136`)
+  DoS vulnerability while parsing certain file uploads (:cve:`2023-46136`)
 - Fix registration form CAPTCHA not being fully validated (:pr:`6096`)
 
 Improvements
@@ -679,7 +719,7 @@ Security fixes
 ^^^^^^^^^^^^^^
 
 - Update `Pillow <https://pypi.org/project/Pillow/>`__ library due to
-  vulnerabilities in libwebp (:cve:`CVE-2023-4863`)
+  vulnerabilities in libwebp (:cve:`2023-4863`)
 
 Internationalization
 ^^^^^^^^^^^^^^^^^^^^
@@ -724,7 +764,7 @@ Security fixes
   considering that event organizers may indeed delete suspicious-looking content when
   encountering it, there is a non-negligible risk of such an attack to succeed. Because
   of this it is strongly recommended to upgrade as soon as possible (:pr:`5862`,
-  :cve:`CVE-2023-37901`)
+  :cve:`2023-37901`)
 
 Internationalization
 ^^^^^^^^^^^^^^^^^^^^
@@ -900,9 +940,9 @@ Security fixes
 
 - Sanitize HTML in global announcement messages
 - Update `cryptography <https://pypi.org/project/cryptography/>`__ library due to
-  vulnerabilities in OpenSSL (:cve:`CVE-2023-0286`)
+  vulnerabilities in OpenSSL (:cve:`2023-0286`)
 - Update `werkzeug <https://pypi.org/project/werkzeug/>`__ library due to a potential
-  Denial of Service vulnerability (:cve:`CVE-2023-25577`)
+  Denial of Service vulnerability (:cve:`2023-25577`)
 
 .. note::
 
@@ -1034,7 +1074,7 @@ Security fixes
 ^^^^^^^^^^^^^^
 
 - Update `cryptography <https://pypi.org/project/cryptography/>`__ library due to
-  vulnerabilities in OpenSSL (:cve:`CVE-2022-3602`, :cve:`CVE-2022-3786`)
+  vulnerabilities in OpenSSL (:cve:`2022-3602`, :cve:`2022-3786`)
 
 .. note::
 

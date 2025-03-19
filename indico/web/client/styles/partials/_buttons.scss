@@ -155,7 +155,6 @@ $i-button-spacing: 0.3rem;
   @include _i-button-borderless($light-black, $black);
   @include _i-button-outlines($light-black, $black);
   margin: 0;
-  padding: 4px 10px 4px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -199,7 +198,7 @@ $i-button-spacing: 0.3rem;
   }
 
   &.highlight {
-    @include i-button-flavor($blue, $dark-blue);
+    @include i-button-flavor($orange, $orange);
   }
 
   &.warning {
@@ -352,7 +351,7 @@ button::-moz-focus-inner {
 }
 
 .i-button > [class*='icon-']::before {
-  font-size: 1.2em;
+  font-size: 15px;
   vertical-align: -15%;
 }
 

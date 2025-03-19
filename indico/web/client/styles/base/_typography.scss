@@ -8,51 +8,51 @@
 @use './palette' as *;
 
 @mixin font-family-body {
-  font-family: 'Liberation Sans', sans-serif;
+  font-family: 'Stem', sans-serif;
 }
 
 @mixin font-family-modern-body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Stem', sans-serif;
 }
 
 @mixin font-family-sui {
-  font-family: 'Muli', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Stem', 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 
 @mixin font-family-title {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Stem', sans-serif;
 }
 
 @mixin font-family-title-light {
-  font-family: 'Roboto Light', sans-serif;
+  font-family: 'Stem', sans-serif;
 }
 
 @mixin font-family-description {
-  font-family: 'Liberation Serif', serif;
+  font-family: 'Stem', serif;
 }
 
 @mixin font-family-monospace {
-  font-family: 'Liberation Mono', monospace;
+  font-family: 'Stem', monospace;
 }
 
 @mixin font-family-serif {
-  font-family: 'Liberation Serif', serif;
+  font-family: 'Stem', serif;
 }
 
 @mixin font-family-sans {
-  font-family: 'Roboto', 'Helvetica', sans-serif;
+  font-family: 'Stem' sans-serif;
 }
 
 @mixin font-family-form {
-  font-family: 'Liberation Sans', sans-serif;
+  font-family: 'Stem', sans-serif;
 }
 
 @mixin font-family-logo {
-  font-family: 'Maven Pro', sans-serif;
+  font-family: 'Stem', sans-serif;
 }
 
 @mixin font-size-body {
-  font-size: 13px;
+  font-size: 15px;
 }
 
 @mixin text-superfluous {

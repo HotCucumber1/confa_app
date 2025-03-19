@@ -34,7 +34,7 @@ const titles = [
   {text: Translate.string('Mx'), value: 'mx'},
 ];
 
-const FinalAffiliationField = ({hasPredefinedAffiliations, ...rest}) => {
+const FinalAffiliationField = ({hasPredefinedAffiliations, allowCustomAffiliations, ...rest}) => {
   const formState = useFormState();
   const currentAffiliation = formState.values.affiliationMeta;
   const [_affiliationResults, setAffiliationResults] = useState([]);
@@ -78,11 +78,24 @@ const FinalAffiliationField = ({hasPredefinedAffiliations, ...rest}) => {
       name="affiliationData"
       options={affiliationOptions}
       fluid
+      allowAdditions={allowCustomAffiliations}
       includeMeta
       additionLabel={Translate.string('Use custom affiliation:') + ' '} // eslint-disable-line prefer-template
       onSearchChange={searchAffiliationChange}
-      placeholder={Translate.string('Select an affiliation or add your own')}
-      noResultsMessage={Translate.string('Search an affiliation or enter one manually')}
+      search={options => [
+        ...(options.find(o => o.key === 'addition') || []),
+        ...options.filter(o => o.key !== 'addition'),
+      ]}
+      placeholder={
+        allowCustomAffiliations
+          ? Translate.string('Select an affiliation or add your own')
+          : Translate.string('Select an affiliation')
+      }
+      noResultsMessage={
+        allowCustomAffiliations
+          ? Translate.string('Search an affiliation or enter one manually')
+          : Translate.string('Search an affiliation')
+      }
       renderCustomOptionContent={value => (
         <Header content={value} subheader={Translate.string('You entered this option manually')} />
       )}
@@ -95,10 +108,16 @@ const FinalAffiliationField = ({hasPredefinedAffiliations, ...rest}) => {
 
 FinalAffiliationField.propTypes = {
   hasPredefinedAffiliations: PropTypes.bool.isRequired,
+  allowCustomAffiliations: PropTypes.bool,
+};
+
+FinalAffiliationField.defaultProps = {
+  allowCustomAffiliations: true,
 };
 
 export default function PersonDetailsModal({
   hasPredefinedAffiliations,
+  allowCustomAffiliations,
   onSubmit,
   onClose,
   person,
@@ -144,6 +163,7 @@ export default function PersonDetailsModal({
           <FinalAffiliationField
             label={Translate.string('Affiliation')}
             hasPredefinedAffiliations={hasPredefinedAffiliations}
+            allowCustomAffiliations={allowCustomAffiliations}
             required={requiredPersonFields?.includes('affiliation')}
           />
         )}
@@ -187,6 +207,7 @@ PersonDetailsModal.propTypes = {
   person: PropTypes.object,
   otherPersons: PropTypes.array,
   hasPredefinedAffiliations: PropTypes.bool.isRequired,
+  allowCustomAffiliations: PropTypes.bool.isRequired,
   hideEmailField: PropTypes.bool,
   validateEmailUrl: PropTypes.string,
   requiredPersonFields: PropTypes.array,

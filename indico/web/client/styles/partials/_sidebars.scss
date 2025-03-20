@@ -47,12 +47,29 @@
 }
 
 .side-menu {
-  @include font-family-title();
+  @include font-family-medium();
   user-select: none;
-  @include single-box-shadow();
-  @include border-all();
-  @include default-border-radius();
   font-size: 1.1em;
+
+  div.menu-title-wrapper {
+    @include font-family-xsmall();
+    display: flex;
+    align-items: center;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 8px;
+
+    span.menu-title {
+      display: inline;
+      margin-left: 16px;
+      // TODO Вынести в стили текста
+      text-transform: uppercase;
+      font-size: 1.1em;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: $black;
+    }
+  }
 
   ul.menu-items > li.section {
     padding: 0;
@@ -82,8 +99,12 @@
     padding: 0;
     margin: 0;
 
+    > .item {
+      height: 40px;
+      line-height: 40px;
+    }
+
     > li {
-      @include border-bottom();
       display: block;
       margin: 0;
 
@@ -97,9 +118,9 @@
 
       .title-wrapper {
         display: block;
-        min-height: 2.6em;
-        line-height: 2.6em;
         padding-left: 9px;
+        height: 40px;
+        line-height: 40px;
 
         .title {
           display: inline;
@@ -110,10 +131,9 @@
       .title {
         display: flex;
         align-items: center;
-        min-height: 2.6em;
-        line-height: 2.6em;
+        border-radius: 6px;
         color: $black;
-        padding-left: 26px;
+        margin-inline: 8px;
 
         &::before {
           margin-right: 0.5em;
@@ -121,7 +141,12 @@
       }
 
       a.title {
-        color: $dark-blue;
+        padding: 10px 16px;
+        color: $midnight-black;
+
+        > span {
+          opacity: 100%;
+        }
       }
 
       > ul {
@@ -131,9 +156,11 @@
 
         > li .title {
           display: flex;
-          min-height: 2em;
-          line-height: 2em;
           padding-left: 51px;
+
+          &.active a.title {
+            background-color: rgba(193, 193, 193, 0.24);
+          }
         }
       }
 
@@ -142,12 +169,12 @@
       }
 
       &:not(.active) a.title:hover {
-        color: $darker-blue;
+        color: $orange;
         background-color: $light-gray;
       }
 
       &.active a.title {
-        color: $darker-blue;
+        background-color: rgba(193, 193, 193, 0.24);
       }
 
       i.icon {
@@ -161,9 +188,13 @@
 }
 
 ul.menu-items li.active {
-  @include inner-border-left($link, $width: 2px);
+  @include inner-border-left($orange, $width: 4px);
+
+  &::before {
+    border-radius: 0 10px 10px 0;
+  }
+
   position: relative;
-  background-color: $light-blue;
 
   > a {
     font-weight: normal;

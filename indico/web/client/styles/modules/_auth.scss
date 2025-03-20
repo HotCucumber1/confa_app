@@ -91,6 +91,10 @@
     }
   }
 
+  .login-form-button:hover {
+    color: white;
+  }
+
   .login-form-button,
   .provider-with-form {
     @include login-form-button();

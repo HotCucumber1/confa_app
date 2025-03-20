@@ -26,7 +26,7 @@
                     <div id="form-wrapper">
                         {{ login_form(active_provider, form) }}
                     </div>
-                    <button class="login-form-button" data-provider="{{ active_provider.title }}"
+                    <button class="i-button login-form-button" data-provider="{{ active_provider.title }}"
                             data-href="{{ url_for('auth.login_form', provider=active_provider.name) }}">
                         Sign In
                     </button>

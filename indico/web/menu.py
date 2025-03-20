@@ -169,12 +169,13 @@ def get_menu_item(menu_id, item, **kwargs):
     return named_objects_from_signal(signals.menu.items.send(menu_id, **kwargs)).get(item)
 
 
-def render_sidemenu(menu_id, active_item=None, **kwargs):
+def render_sidemenu(menu_id, active_item=None, title=None, **kwargs):
     """Render a sidemenu with sections/items.
 
     :param menu_id: The identifier of the menu.
     :param active_item: The name of the currently-active menu item.
+    :param title: The name of menu title.
     :param kwargs: Additional arguments passed to the menu signals.
     """
     items = build_menu_structure(menu_id, active_item=active_item, **kwargs)
-    return Markup(render_template('side_menu.html', items=items, menu_id=menu_id))
+    return Markup(render_template('side_menu.html', items=items, title=title, menu_id=menu_id))

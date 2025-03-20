@@ -10,16 +10,11 @@
 a,
 .fake-link,
 .ui-widget-content a {
-  color: $blue;
+  color: $confa-text-secondary;
 
   &:hover {
-    color: $dark-orange;
+    color: $confa-text-primary;
     cursor: pointer;
-  }
-
-  &:link,
-  &:visited {
-    text-decoration: none;
   }
 }
 

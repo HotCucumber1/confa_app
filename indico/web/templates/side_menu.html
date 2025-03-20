@@ -41,7 +41,7 @@
             <div class="title-wrapper">
                 <span class="title {{ section.icon }} side-menu-label">{{ section.title }}</span>
             </div>
-            <ul class="menu-items {{ 'weak-hidden' if not section.active }}">
+            <ul class="menu-items{{ 'weak-hidden' if not section.active }}">
                 {% for item in section.items %}
                     {{ _side_menu_item(item) }}
                 {% endfor %}

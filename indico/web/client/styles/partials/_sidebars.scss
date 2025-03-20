@@ -143,10 +143,8 @@
       a.title {
         padding: 10px 16px;
         color: $midnight-black;
-
-        > span {
-          opacity: 100%;
-        }
+        height: 40px;
+        line-height: 40px;
       }
 
       > ul {
@@ -155,11 +153,16 @@
         padding: 0;
 
         > li .title {
+          margin-left: 32px;
           display: flex;
-          padding-left: 51px;
 
           &.active a.title {
             background-color: rgba(193, 193, 193, 0.24);
+          }
+
+          &:not(.active) a.title:hover {
+            color: $orange;
+            background-color: $light-gray;
           }
         }
       }

@@ -4,7 +4,8 @@
 *.py[co]
 __pycache__/
 .pytest_cache/
-.venv/
+/venv/
+/env/
 
 # configs
 *.conf

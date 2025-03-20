@@ -176,8 +176,8 @@ a {
   @include banner-bar();
 
   &.highlight {
-    background-color: $light-blue;
-    color: $dark-blue;
+    background-color: $light-orange;
+    color: $dark-orange;
   }
 
   &.warning {

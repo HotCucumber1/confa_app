@@ -7,7 +7,7 @@
 
 @use 'base' as *;
 
-$i-button-background-color: darken($light-gray, 5%);
+$i-button-background-color: $light-gray;
 $i-button-spacing: 0.3rem;
 
 @mixin button {
@@ -104,15 +104,6 @@ $i-button-spacing: 0.3rem;
       border-color: $border-accent-color;
       color: $font-accent-color;
     }
-
-    &:hover {
-      @include gradient($flavor-color, $flavor-darkened-color);
-    }
-
-    &:active,
-    &.open {
-      @include gradient($flavor-darkened-color, $flavor-color);
-    }
   }
 }
 
@@ -160,7 +151,6 @@ $i-button-spacing: 0.3rem;
   justify-content: center;
   white-space: nowrap;
 
-  & ~ .i-button,
   & ~ .group {
     margin-left: $i-button-spacing;
   }

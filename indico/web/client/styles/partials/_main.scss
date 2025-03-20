@@ -118,15 +118,15 @@ div.announcement-bar {
   }
 
   &.highlight {
-    background-color: $light-blue;
+    background-color: $light-orange;
     color: $dark-black;
 
     .icon {
-      color: $blue;
+      color: $orange;
     }
 
     .close-button {
-      color: $dark-blue;
+      color: $dark-orange;
     }
   }
 
@@ -186,7 +186,7 @@ div.main-breadcrumb {
     }
 
     a.item:hover {
-      color: $dark-blue;
+      color: $dark-orange;
     }
   }
 }

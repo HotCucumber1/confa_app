@@ -151,16 +151,16 @@ $default-spacing: 10px;
 
 .highlight-message-box {
   @include message-box();
-  background-color: $light-blue;
-  border: 1px solid $dark-blue;
+  background-color: $light-orange;
+  border: 1px solid $dark-orange;
 
   .icon {
     @include icon-before('icon-lamp');
-    color: $dark-blue;
+    color: $dark-orange;
   }
 
   .message-box-footer {
-    background: darken($light-blue, 5%);
+    background: darken($light-orange, 5%);
   }
 }
 

@@ -49,10 +49,10 @@ li > table + .note-area-wrapper {
 
     a {
       @include transition(opacity);
-      color: darken($pastel-blue, $color-variation);
+      color: darken($pastel-orange, $color-variation);
 
       &:hover {
-        color: $blue;
+        color: $orange;
       }
     }
   }

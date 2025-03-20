@@ -14,7 +14,7 @@
 
 @mixin i-box-title {
   @include font-family-title-light();
-  color: $dark-blue;
+  color: $dark-orange;
   display: inline-block;
   font-size: 1.5em;
   font-weight: bold;
@@ -302,11 +302,11 @@ $i-box-padding: 10px;
 }
 
 .i-box.highlight {
-  border-color: $pastel-blue;
+  border-color: $pastel-orange;
 
   .i-box-header {
-    background-color: $light-blue;
-    border-bottom-color: $pastel-blue;
+    background-color: $light-orange;
+    border-bottom-color: $pastel-orange;
   }
 }
 
@@ -513,7 +513,7 @@ $i-box-padding: 10px;
   border-radius: 0.5em;
 
   h1 {
-    color: $dark-blue;
+    color: $dark-orange;
     font-size: 2em;
     padding-bottom: 10px;
   }

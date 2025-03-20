@@ -121,7 +121,7 @@
       }
 
       a.title {
-        color: $dark-blue;
+        color: $dark-orange;
       }
 
       > ul {
@@ -142,12 +142,12 @@
       }
 
       &:not(.active) a.title:hover {
-        color: $darker-blue;
+        color: $darker-orange;
         background-color: $light-gray;
       }
 
       &.active a.title {
-        color: $darker-blue;
+        color: $darker-orange;
       }
 
       i.icon {
@@ -163,7 +163,7 @@
 ul.menu-items li.active {
   @include inner-border-left($link, $width: 2px);
   position: relative;
-  background-color: $light-blue;
+  background-color: $light-orange;
 
   > a {
     font-weight: normal;

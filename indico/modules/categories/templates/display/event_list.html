@@ -56,7 +56,9 @@
         {% endcall %}
     {% endif %}
 
-    <h2>Events</h2>
+    {% if events_by_month %}
+            <h2>Events</h2>
+    {% endif %}
     <div class="event-list"
          data-show-future-events-url="{{ url_for('.show_future_events', category) }}"
          data-show-past-events-url="{{ url_for('.show_past_events', category) }}">

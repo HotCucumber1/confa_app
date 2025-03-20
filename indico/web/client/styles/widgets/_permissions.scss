@@ -144,7 +144,7 @@
           }
 
           &.permission-event-registration {
-            @include permission-label($blue);
+            @include permission-label($orange);
           }
 
           &.permission-event-surveys {
@@ -156,7 +156,7 @@
           }
 
           &.permission-session-coordinate {
-            @include permission-label($blue);
+            @include permission-label($orange);
           }
         }
       }
@@ -214,8 +214,8 @@
 }
 
 @mixin circle-checkbox-checked() {
-  background-color: $pastel-blue;
-  border: 2px solid $darker-blue;
+  background-color: $pastel-orange;
+  border: 2px solid $darker-orange;
 }
 
 .permissions-dialog {
@@ -254,7 +254,7 @@
       }
 
       &:hover:not(:checked) + label::before {
-        background-color: $light-blue;
+        background-color: $light-orange;
       }
 
       &:checked + label::before {
@@ -262,8 +262,8 @@
       }
 
       &:hover:checked:not(:disabled) + label::before {
-        background-color: $light-blue;
-        border-color: $dark-blue;
+        background-color: $light-orange;
+        border-color: $dark-orange;
       }
 
       &:checked ~ ul {

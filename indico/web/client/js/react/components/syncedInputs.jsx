@@ -131,6 +131,7 @@ export function SyncedFinalAffiliationDropdown({
   lockedFields,
   lockedFieldMessage,
   currentAffiliation,
+  allowCustomAffiliations,
 }) {
   const [_affiliationResults, setAffiliationResults] = useState([]);
   const affiliationResults =
@@ -179,10 +180,23 @@ export function SyncedFinalAffiliationDropdown({
       processSyncedValue={(value, values) => ({id: values.affiliation_id || null, text: value})}
       options={affiliationOptions}
       fluid
+      allowAdditions={allowCustomAffiliations}
       additionLabel={Translate.string('Use custom affiliation:') + ' '} // eslint-disable-line prefer-template
       onSearchChange={searchAffiliationChange}
-      placeholder={Translate.string('Select an affiliation or add your own')}
-      noResultsMessage={Translate.string('Search an affiliation or enter one manually')}
+      search={options => [
+        ...(options.find(o => o.key === 'addition') || []),
+        ...options.filter(o => o.key !== 'addition'),
+      ]}
+      placeholder={
+        allowCustomAffiliations
+          ? Translate.string('Select an affiliation or add your own')
+          : Translate.string('Select an affiliation')
+      }
+      noResultsMessage={
+        allowCustomAffiliations
+          ? Translate.string('Search an affiliation or enter one manually')
+          : Translate.string('Search an affiliation')
+      }
       renderCustomOptionContent={value => (
         <Header content={value} subheader={Translate.string('You entered this option manually')} />
       )}
@@ -202,10 +216,12 @@ SyncedFinalAffiliationDropdown.propTypes = {
   lockedFields: PropTypes.arrayOf(PropTypes.string).isRequired,
   lockedFieldMessage: PropTypes.string.isRequired,
   currentAffiliation: PropTypes.object,
+  allowCustomAffiliations: PropTypes.bool,
 };
 
 SyncedFinalAffiliationDropdown.defaultProps = {
   required: false,
   syncName: null,
   currentAffiliation: null,
+  allowCustomAffiliations: true,
 };

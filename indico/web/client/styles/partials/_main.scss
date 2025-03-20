@@ -80,13 +80,15 @@
 
 div.page-header {
   position: relative;
-  background-color: $dark-blue;
+  background-color: $white;
   width: 100%;
+  border-bottom: 1px solid #E8E9EA;
 
   img.header-logo {
     margin: 17px 0 10px 40px;
     border: none;
-    height: 60px;
+    height: 19px;
+    width: 180px;
   }
 }
 
@@ -116,15 +118,15 @@ div.announcement-bar {
   }
 
   &.highlight {
-    background-color: $light-blue;
+    background-color: $light-orange;
     color: $dark-black;
 
     .icon {
-      color: $blue;
+      color: $orange;
     }
 
     .close-button {
-      color: $dark-blue;
+      color: $dark-orange;
     }
   }
 
@@ -184,7 +186,7 @@ div.main-breadcrumb {
     }
 
     a.item:hover {
-      color: $dark-blue;
+      color: $dark-orange;
     }
   }
 }
@@ -194,7 +196,7 @@ div.main-breadcrumb {
 div.session-bar {
   @include font-family-title();
 
-  margin: 0.5em 0.5em 0 0;
+  margin-right: 40px;
 
   .toolbar {
     padding: 0;

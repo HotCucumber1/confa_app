@@ -35,7 +35,7 @@ a {
 
 // TODO: move this to Indico-wide file
 .indico-top-bar {
-  background-color: $dark-blue;
+  background-color: $white;
   height: $indico-top-bar-height;
   display: flex;
   align-items: center;
@@ -176,8 +176,8 @@ a {
   @include banner-bar();
 
   &.highlight {
-    background-color: $light-blue;
-    color: $dark-blue;
+    background-color: $light-orange;
+    color: $dark-orange;
   }
 
   &.warning {

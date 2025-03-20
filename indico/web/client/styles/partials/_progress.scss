@@ -26,7 +26,7 @@
   & > .i-progress-bar {
     float: left;
     width: 0%;
-    background-color: $dark-blue;
+    background-color: $dark-orange;
     @include transition(width 0.8s linear);
   }
 

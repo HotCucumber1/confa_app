@@ -10,10 +10,10 @@
 a,
 .fake-link,
 .ui-widget-content a {
-  color: $confa-text-secondary;
+  color: $light-black;
 
   &:hover {
-    color: $confa-text-primary;
+    color: $orange;
     cursor: pointer;
   }
 }

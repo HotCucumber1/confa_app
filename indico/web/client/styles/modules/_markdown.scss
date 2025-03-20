@@ -138,7 +138,7 @@ $display-preview-bg-color: white;
 
   &.focused {
     @include transition(border);
-    @include border-all($blue);
+    @include border-all($orange);
   }
 }
 

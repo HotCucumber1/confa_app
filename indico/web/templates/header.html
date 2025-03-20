@@ -6,9 +6,9 @@
 {{ render_announcements(legacy=true) }}
 
 <div class="page-header clearfix">
-    <div class="flexrow f-j-space-between f-a-start">
+    <div class="flexrow f-j-space-between f-a-center" style="height: 64px;">
         {% block logo %}
-            {%- set logo_url = indico_config.LOGO_URL or (indico_config.IMAGES_BASE_URL + '/logo_indico_bw.svg') -%}
+            {%- set logo_url = indico_config.LOGO_URL or (indico_config.IMAGES_BASE_URL + '/Logo.svg') -%}
             <a id="header-logo"
                href="{{ url_for_index() }}"
                aria-label="{% trans %}Indico main page{% endtrans %}"
@@ -23,37 +23,6 @@
                                   force_locale=force_locale, force_locale_alts=force_locale_alts) }}
             {{ template_hook('page-header', category=category) }}
         </div>
-    </div>
-
-    <div id="global-menu" class="global-menu toolbar">
-        {% block global_menu %}
-            <menu>
-                {% for item in top_menu_items recursive %}
-                    {% if loop.depth0 %}
-                        {# we're inside a section #}
-                        <li>
-                            {% if item.section == 'create-event' and item.url in ('lecture', 'meeting', 'conference') %}
-                                {# special handling for event creation links #}
-                                {{ create_event_link(category, item.url, item.title, id=item.name) }}
-                            {% else %}
-                                <a href="{{ item.url }}">{{ item.title }}</a>
-                            {% endif %}
-                        </li>
-                    {% elif not item.is_section %}
-                        <li><a href="{{ item.url }}">{{ item.title }}</a></li>
-                    {% elif item.items %}
-                        <li>
-                            <ind-menu>
-                                <button>{{ item.title }}</button>
-                                <menu>
-                                    {{ loop(item.items) }}
-                                </menu>
-                            </ind-menu>
-                        </li>
-                    {% endif %}
-                {% endfor %}
-            </menu>
-        {% endblock %}
     </div>
 </div>
 

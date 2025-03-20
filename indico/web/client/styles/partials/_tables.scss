@@ -80,12 +80,12 @@ tr.i-table {
 
   &.selected,
   &.selected + tr.details-row {
-    background-color: $pastel-blue !important;
+    background-color: $pastel-orange !important;
   }
 
   &:hover {
     @include transition(background-color 0.2s);
-    background-color: $light-blue;
+    background-color: $light-orange;
   }
 }
 
@@ -159,7 +159,7 @@ tr.i-table.interactive {
   &:hover {
     > td,
     + tr.details-row > td.i-table {
-      border-left-color: $blue;
+      border-left-color: $orange;
     }
   }
 

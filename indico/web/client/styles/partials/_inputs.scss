@@ -25,7 +25,7 @@
   padding: 0 4px;
 
   &:focus {
-    @include border-all($blue);
+    @include border-all($orange);
   }
 
   &.hasError {
@@ -157,13 +157,14 @@ ul {
     display: none;
 
     &:checked + label {
-      @include labels.i-label-highlight($blue, $dark-blue);
-      @include i-button-flavor($blue, $dark-blue);
+      @include labels.i-label-highlight($orange, $dark-orange);
+      @include i-button-flavor($orange, $dark-orange);
     }
 
     &:first-child + label {
       border-top-left-radius: $default-border-radius;
       border-bottom-left-radius: $default-border-radius;
+      padding: 5px 15px;
     }
 
     &:disabled + label.i-button {
@@ -178,8 +179,8 @@ ul {
 
     &:checked + label:hover,
     &:checked + label:active {
-      @include labels.i-label-highlight($blue, $dark-blue);
-      @include i-button-flavor($blue, $dark-blue);
+      @include labels.i-label-highlight($orange, $dark-orange);
+      @include i-button-flavor($orange, $dark-orange);
     }
   }
 }

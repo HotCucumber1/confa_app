@@ -4,7 +4,8 @@
 *.py[co]
 __pycache__/
 .pytest_cache/
-.venv/
+/venv/
+/env/
 
 # configs
 *.conf
@@ -52,3 +53,7 @@ htmlcov/
 # node/webpack
 webpack-build-config.json
 *.lock
+
+requirements.txt
+package.json
+package-lock.json

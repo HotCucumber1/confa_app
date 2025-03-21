@@ -481,7 +481,7 @@
     input:checked ~ label.bullet:hover::after,
     label.bullet:hover ~ input:checked ~ label.bullet::after,
     input:checked ~ label.bullet:hover ~ label.bullet::after {
-      background-image: linear-gradient(300deg, $orange, $orange 45%, $pastel-orange 55%);
+      background-image: linear-gradient(300deg, $orange, $orange 45%, $pastel-blue 55%);
       background-repeat: no-repeat;
     }
 

@@ -18,7 +18,7 @@
       width: 10em;
       min-height: 7em;
 
-      @include badges.i-badge-color($light-orange, $dark-orange, $light-gray, true);
+      @include badges.i-badge-color($light-blue, $dark-orange, $light-gray, true);
 
       &.i-badge-disabled {
         background: repeating-linear-gradient(

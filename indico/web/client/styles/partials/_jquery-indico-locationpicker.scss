@@ -165,7 +165,7 @@
 
         &.info {
           @include border-all($orange);
-          background-color: $light-orange;
+          background-color: $light-blue;
 
           .icon {
             color: $orange;
@@ -234,7 +234,7 @@
   @include ellipsis();
 
   display: none !important;
-  background-color: $pastel-orange;
+  background-color: $pastel-blue;
   padding: 2px;
   position: absolute;
   top: 0.6em;

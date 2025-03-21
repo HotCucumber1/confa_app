@@ -25,7 +25,7 @@
   text-align: center;
 
   border-bottom: 5px solid white;
-  background-color: $darker-orange;
+  background-color: $darker-blue;
   background-repeat: no-repeat;
   background-position: 20px 20px;
 
@@ -40,7 +40,7 @@
 
     font-size: 54px;
 
-    color: $pastel-orange;
+    color: $pastel-blue;
   }
 
   .header-subtitle {
@@ -115,7 +115,7 @@
   padding-top: 30px;
   padding-bottom: 50px;
 
-  border-left: 3px $darker-orange solid;
+  border-left: 3px $darker-blue solid;
   background: white;
   // stylelint-disable-next-line scss/media-feature-value-dollar-variable
   @media only screen and (min-width: 481px) and (max-width: 768px) {
@@ -167,7 +167,7 @@
 
         border: 5px solid white;
         border-radius: 50%;
-        background-color: $darker-orange;
+        background-color: $darker-blue;
 
         i {
           font-size: 50px;
@@ -195,7 +195,7 @@
           padding-bottom: 0.6em;
           padding-left: 2%;
 
-          color: $darker-orange;
+          color: $darker-blue;
         }
 
         .step-description {

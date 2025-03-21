@@ -38,7 +38,7 @@
 
   .i-tag {
     display: inline-block;
-    background-color: $pastel-orange;
+    background-color: $pastel-blue;
     margin-right: 5px;
     font-weight: normal;
     color: $light-black;
@@ -161,7 +161,7 @@
 
 .deadline-info {
   @include border-all($orange);
-  background: $light-orange;
+  background: $light-blue;
   padding: 10px;
 
   .label {

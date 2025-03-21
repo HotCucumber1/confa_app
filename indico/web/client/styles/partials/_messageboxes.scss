@@ -151,7 +151,7 @@ $default-spacing: 10px;
 
 .highlight-message-box {
   @include message-box();
-  background-color: $light-orange;
+  background-color: $light-blue;
   border: 1px solid $dark-orange;
 
   .icon {
@@ -160,7 +160,7 @@ $default-spacing: 10px;
   }
 
   .message-box-footer {
-    background: darken($light-orange, 5%);
+    background: darken($light-blue, 5%);
   }
 }
 

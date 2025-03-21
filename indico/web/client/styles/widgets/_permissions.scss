@@ -214,8 +214,8 @@
 }
 
 @mixin circle-checkbox-checked() {
-  background-color: $pastel-orange;
-  border: 2px solid $darker-orange;
+  background-color: $pastel-blue;
+  border: 2px solid $darker-blue;
 }
 
 .permissions-dialog {
@@ -254,7 +254,7 @@
       }
 
       &:hover:not(:checked) + label::before {
-        background-color: $light-orange;
+        background-color: $light-blue;
       }
 
       &:checked + label::before {
@@ -262,7 +262,7 @@
       }
 
       &:hover:checked:not(:disabled) + label::before {
-        background-color: $light-orange;
+        background-color: $light-blue;
         border-color: $dark-orange;
       }
 

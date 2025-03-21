@@ -89,9 +89,9 @@
   }
 
   &.highlight {
-    @include _progress($pastel-orange, $light-orange);
+    @include _progress($pastel-blue, $light-blue);
     color: $light-black;
-    background-color: $light-orange;
+    background-color: $light-blue;
     border-color: $dark-orange;
   }
 

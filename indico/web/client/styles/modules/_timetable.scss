@@ -16,14 +16,14 @@
 
   li.item {
     &:hover {
-      background: $light-orange;
+      background: $light-blue;
     }
 
     padding: 5px;
     cursor: pointer;
 
     &.selected {
-      background: $indico-orange;
+      background: $indico-blue;
     }
 
     &:not(:last-child) {

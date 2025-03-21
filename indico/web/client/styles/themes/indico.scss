@@ -16,7 +16,7 @@ $tt-secondary-color: #05b3b3 !default;
 $tt-secondary-pastel: #a8dede !default;
 $tt-nested-time-color: $light-black !default;
 $tt-additional-text-color: $light-black !default;
-$selected-color: $indico-orange !default;
+$selected-color: $indico-blue !default;
 
 @mixin header-logo($image, $position: 15px, $padding-left: 150px, $scale: none) {
   div.event-header {

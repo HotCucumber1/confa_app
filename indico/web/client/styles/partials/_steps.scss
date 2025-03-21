@@ -13,7 +13,7 @@
   }
 
   100% {
-    background-color: $indico-orange;
+    background-color: $indico-blue;
   }
 }
 
@@ -23,7 +23,7 @@
   }
 
   100% {
-    border-color: $indico-orange;
+    border-color: $indico-blue;
   }
 }
 
@@ -38,27 +38,27 @@ ul.steps {
 
     &.completed {
       .circle::before {
-        background-color: $indico-orange;
-        border-color: $indico-orange;
+        background-color: $indico-blue;
+        border-color: $indico-blue;
       }
 
       .text {
-        color: $indico-orange;
+        color: $indico-blue;
       }
 
       .horizontal-line {
-        background-color: $indico-orange;
+        background-color: $indico-blue;
       }
     }
 
     &.current {
       .circle::before {
-        border-color: $indico-orange;
+        border-color: $indico-blue;
         animation: step-fade-in-border 0.5s linear;
       }
 
       .horizontal-line {
-        background-color: $indico-orange;
+        background-color: $indico-blue;
         animation: step-fade-in-background 0.5s linear;
       }
     }

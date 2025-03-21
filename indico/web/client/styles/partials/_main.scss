@@ -82,7 +82,7 @@ div.page-header {
   position: relative;
   background-color: $white;
   width: 100%;
-  border-bottom: 1px solid #E8E9EA;
+  border-bottom: 1px solid $confa-border-gray;
 
   img.header-logo {
     margin: 17px 0 10px 40px;
@@ -118,7 +118,7 @@ div.announcement-bar {
   }
 
   &.highlight {
-    background-color: $light-orange;
+    background-color: $light-blue;
     color: $dark-black;
 
     .icon {
@@ -166,8 +166,7 @@ div.announcement-bar {
 div.main-breadcrumb {
   @include font-family-title();
 
-  background-color: darken($light-gray, 5%);
-  border-bottom: 1px solid $gray;
+  border-bottom: 1px solid $confa-border-gray;
   padding: 14px 32px 14px 24px;
 
   &.management {

@@ -55,6 +55,15 @@
   font-size: 15px;
 }
 
+// TODO Вынести нормально шрифты и добавить их
+@mixin font-family-xsmall {
+  font-family: 'Stem', sans-serif;
+}
+
+@mixin font-family-medium {
+  font-family: 'Manrope', sans-serif;
+}
+
 @mixin text-superfluous {
   color: $gray;
 }

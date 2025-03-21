@@ -223,3 +223,159 @@
   font-weight: bold;
   font-style: italic;
 }
+
+// Stem
+@font-face {
+  font-family: 'Stem';
+  src: url('static:fonts/stem/Stem-Thin.eot');
+  src: url('static:fonts/stem/Stem-Thin.eot?#iefix') format('embedded-opentype'),
+    url('static:fonts/stem/Stem-Thin.woff2') format('woff2'),
+    url('static:fonts/stem/Stem-Thin.woff') format('woff'),
+    url('static:fonts/stem/Stem-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Stem';
+  src: url('static:fonts/stem/Stem-ExtraLight.eot');
+  src: url('static:fonts/stem/Stem-ExtraLight.eot?#iefix') format('embedded-opentype'),
+    url('static:fonts/stem/Stem-ExtraLight.woff2') format('woff2'),
+    url('static:fonts/stem/Stem-ExtraLight.woff') format('woff'),
+    url('static:fonts/stem/Stem-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Stem';
+  src: url('static:fonts/stem/Stem-SemiLight.eot');
+  src: url('static:fonts/stem/Stem-SemiLight.eot?#iefix') format('embedded-opentype'),
+    url('static:fonts/stem/Stem-SemiLight.woff2') format('woff2'),
+    url('static:fonts/stem/Stem-SemiLight.woff') format('woff'),
+    url('static:fonts/stem/Stem-SemiLight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Stem';
+  src: url('static:fonts/stem/Stem-Light.eot');
+  src: url('static:fonts/stem/Stem-Light.eot?#iefix') format('embedded-opentype'),
+    url('static:fonts/stem/Stem-Light.woff2') format('woff2'),
+    url('static:fonts/stem/Stem-Light.woff') format('woff'),
+    url('static:fonts/stem/Stem-Light.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Stem';
+  src: url('static:fonts/stem/Stem-Regular.eot');
+  src: url('static:fonts/stem/Stem-Regular.eot?#iefix') format('embedded-opentype'),
+    url('static:fonts/stem/Stem-Regular.woff2') format('woff2'),
+    url('static:fonts/stem/Stem-Regular.woff') format('woff'),
+    url('static:fonts/stem/Stem-Regular.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Stem';
+  src: url('static:fonts/stem/Stem-Medium.eot');
+  src: url('static:fonts/stem/Stem-Medium.eot?#iefix') format('embedded-opentype'),
+    url('static:fonts/stem/Stem-Medium.woff2') format('woff2'),
+    url('static:fonts/stem/Stem-Medium.woff') format('woff'),
+    url('static:fonts/stem/Stem-Medium.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Stem';
+  src: url('static:fonts/stem/Stem-Bold.eot');
+  src: url('static:fonts/stem/Stem-Bold.eot?#iefix') format('embedded-opentype'),
+    url('static:fonts/stem/Stem-Bold.woff2') format('woff2'),
+    url('static:fonts/stem/Stem-Bold.woff') format('woff'),
+    url('static:fonts/stem/Stem-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+// Manrope
+@font-face {
+  font-family: 'Manrope';
+  src: url('static:fonts/manrope/Manrope-Thin.eot');
+  src: url('static:fonts/manrope/Manrope-Thin.eot?#iefix') format('embedded-opentype'),
+    url('static:fonts/manrope/Manrope-Thin.woff2') format('woff2'),
+    url('static:fonts/manrope/Manrope-Thin.woff') format('woff'),
+    url('static:fonts/manrope/Manrope-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('static:fonts/manrope/Manrope-Light.eot');
+  src: url('static:fonts/manrope/Manrope-Light.eot?#iefix') format('embedded-opentype'),
+    url('static:fonts/manrope/Manrope-Light.woff2') format('woff2'),
+    url('static:fonts/manrope/Manrope-Light.woff') format('woff'),
+    url('static:fonts/manrope/Manrope-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('static:fonts/manrope/Manrope-Regular.eot');
+  src: url('static:fonts/manrope/Manrope-Regular.eot?#iefix') format('embedded-opentype'),
+    url('static:fonts/manrope/Manrope-Regular.woff2') format('woff2'),
+    url('static:fonts/manrope/Manrope-Regular.woff') format('woff'),
+    url('static:fonts/manrope/Manrope-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('static:fonts/manrope/Manrope-Medium.eot');
+  src: url('static:fonts/manrope/Manrope-Medium.eot?#iefix') format('embedded-opentype'),
+    url('static:fonts/manrope/Manrope-Medium.woff2') format('woff2'),
+    url('static:fonts/manrope/Manrope-Medium.woff') format('woff'),
+    url('static:fonts/manrope/Manrope-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('static:fonts/manrope/Manrope-Semibold.eot');
+  src: url('static:fonts/manrope/Manrope-Semibold.eot?#iefix') format('embedded-opentype'),
+    url('static:fonts/manrope/Manrope-Semibold.woff2') format('woff2'),
+    url('static:fonts/manrope/Manrope-Semibold.woff') format('woff'),
+    url('static:fonts/manrope/Manrope-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('static:fonts/manrope/Manrope-Bold.eot');
+  src: url('static:fonts/manrope/Manrope-Bold.eot?#iefix') format('embedded-opentype'),
+    url('static:fonts/manrope/Manrope-Bold.woff2') format('woff2'),
+    url('static:fonts/manrope/Manrope-Bold.woff') format('woff'),
+    url('static:fonts/manrope/Manrope-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('static:fonts/manrope/Manrope-ExtraBold.eot');
+  src: url('static:fonts/manrope/Manrope-ExtraBold.eot?#iefix') format('embedded-opentype'),
+    url('static:fonts/manrope/Manrope-ExtraBold.woff2') format('woff2'),
+    url('static:fonts/manrope/Manrope-ExtraBold.woff') format('woff'),
+    url('static:fonts/manrope/Manrope-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}

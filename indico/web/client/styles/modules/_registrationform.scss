@@ -547,7 +547,7 @@
           visibility: hidden;
 
           &:hover {
-            color: $blue;
+            color: $orange;
           }
         }
       }
@@ -558,7 +558,7 @@
     }
 
     tr:hover > td {
-      background: $light-blue !important;
+      background: $light-orange !important;
 
       &.actions a {
         visibility: visible;

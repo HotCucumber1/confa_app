@@ -23,7 +23,7 @@ div.event-service-association-title {
 
   .event-service-row {
     border-radius: 2px;
-    border: 1px solid $pastel-blue;
+    border: 1px solid $pastel-orange;
     background-color: $light-gray;
   }
 }
@@ -37,9 +37,9 @@ div.event-service-row {
   position: relative;
 
   &.info {
-    background-color: $light-blue;
-    border-color: $pastel-blue;
-    box-shadow: 0 2px 1px -1px $pastel-blue;
+    background-color: $light-orange;
+    border-color: $pastel-orange;
+    box-shadow: 0 2px 1px -1px $pastel-orange;
   }
 
   & > .event-service-row-collapsed {

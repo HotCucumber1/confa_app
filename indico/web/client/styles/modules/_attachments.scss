@@ -77,11 +77,11 @@
         }
 
         > a.icon-file-word {
-          @include colored-icon($dark-blue);
+          @include colored-icon($dark-orange);
         }
 
         > a.icon-file-image {
-          @include colored-icon($blue);
+          @include colored-icon($orange);
         }
 
         > a.icon-calendar {
@@ -147,14 +147,14 @@
 
             &.icon-edit:hover::before,
             &.icon-file-download:hover::before {
-              color: $blue;
+              color: $orange;
             }
           }
         }
       }
 
       &:hover:not(.empty) > td {
-        background-color: $pastel-blue;
+        background-color: $pastel-orange;
 
         &:first-child {
           border-top-left-radius: $default-border-radius;
@@ -263,11 +263,11 @@
 }
 
 .attachment.icon-file-word {
-  @include colored-icon($dark-blue);
+  @include colored-icon($dark-orange);
 }
 
 .attachment.icon-file-image {
-  @include colored-icon($blue);
+  @include colored-icon($orange);
 }
 
 .attachment.icon-calendar {

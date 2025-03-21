@@ -50,7 +50,7 @@ Improvements
 - Do not "inline" the full participant list in conference events using a meeting-style
   timetable and link to the conference participant list instead (:pr:`6753`)
 - Add new setting :data:`LOCAL_USERNAMES` to disable usernames for logging in and only
-  use the email address (:pr:`6751`)
+  use the email address (:pr:`6751`, :pr:`6810`)
 - Tell search engines to not index events marked as "invisible" (:pr:`6762`, thanks
   :user:`openprojects`)
 - Make the minimum length of local account passwords configurable, and default to ``15``
@@ -60,6 +60,15 @@ Improvements
 - Remove anonymized users from local groups (:pr:`6738`, thanks :user:`SegiNyn`)
 - Add ACLs for room booking locations which can grant privileges on the location itself
   and/or all its rooms (:pr:`6566`, thanks :user:`SegiNyn`)
+- Support alternative names in predefined affiliations and make its search more powerful
+  (:pr:`6758`)
+- Add setting to disallow entering custom affiliations when predefined affiliations are used
+  (:pr:`6809`)
+- Log changes to event payment methods (:pr:`6739`)
+- Add button to select all rooms for exporting in the room list (:pr:`6773`, thanks
+  :user:`Michi03`)
+- Include abstract details in comment notification email subject (:issue:`6449`, :pr:`6782`,
+  thanks :user:`amCap1712`)
 
 Bugfixes
 ^^^^^^^^

@@ -139,7 +139,7 @@ $i-label-color: $light-black;
   }
 
   &.highlight {
-    @include i-label-highlight($blue, $dark-blue);
+    @include i-label-highlight($orange, $dark-orange);
   }
 
   &.warning {

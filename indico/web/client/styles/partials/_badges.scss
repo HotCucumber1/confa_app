@@ -55,7 +55,7 @@
   text-align: center;
   box-shadow: 0 2px 1px 0 $gray;
   min-width: 10em;
-  @include i-badge-color($light-blue, $dark-blue, $light-gray, true); // Default badge color
+  @include i-badge-color($light-orange, $dark-orange, $light-gray, true); // Default badge color
 
   &.i-badge-gray {
     @include i-badge-color($light-black, $light-gray, $gray, true);
@@ -117,7 +117,7 @@ span.badge {
   font-size: 0.8em;
   margin-left: 0.5em;
   color: #fff;
-  background: $blue;
+  background: $orange;
   white-space: nowrap;
   line-height: initial;
 }

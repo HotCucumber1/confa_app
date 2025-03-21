@@ -38,7 +38,7 @@
 
   .i-tag {
     display: inline-block;
-    background-color: $pastel-blue;
+    background-color: $pastel-orange;
     margin-right: 5px;
     font-weight: normal;
     color: $light-black;
@@ -82,7 +82,7 @@
     margin-bottom: 1em;
 
     &:hover {
-      border-color: $blue;
+      border-color: $orange;
     }
 
     .row-title {
@@ -160,14 +160,14 @@
 }
 
 .deadline-info {
-  @include border-all($blue);
-  background: $light-blue;
+  @include border-all($orange);
+  background: $light-orange;
   padding: 10px;
 
   .label {
     font-size: 11pt;
     font-weight: bold;
-    color: $blue;
+    color: $orange;
     margin-bottom: 5px;
   }
 
@@ -177,7 +177,7 @@
   }
 
   .icon {
-    color: $blue;
+    color: $orange;
     float: left;
     font-size: 2rem;
     padding-right: 0.5em;

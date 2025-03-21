@@ -18,7 +18,7 @@
     @include border-bottom();
     border-radius: 0;
     background-color: $light-gray !important;
-    color: $dark-blue !important;
+    color: $dark-orange !important;
     margin: -0.2em -0.2em 0;
 
     .ui-datepicker-month,
@@ -54,7 +54,7 @@
       .ui-datepicker-prev:hover,
       .ui-datepicker-next:hover {
         color: white;
-        background: $blue;
+        background: $orange;
       }
     }
 
@@ -98,17 +98,17 @@
     }
 
     .ui-state-default {
-      background: $light-blue;
+      background: $light-orange;
     }
 
     .ui-state-active {
-      background: $blue;
+      background: $orange;
       color: white !important;
       font-weight: bold;
     }
 
     .ui-state-hover {
-      background: $blue;
+      background: $orange;
       color: white !important;
     }
   }
@@ -119,7 +119,7 @@
 
     button.ui-datepicker-current {
       @include transition(background, color);
-      background: $light-blue;
+      background: $light-orange;
       border: none !important;
       float: right;
       margin-bottom: 0.2em;
@@ -130,7 +130,7 @@
     }
 
     &:not(.ui-state-disabled) button.ui-datepicker-current:hover {
-      background: $blue;
+      background: $orange;
       color: white;
     }
 
@@ -153,11 +153,11 @@
   top: 2px;
 
   &:hover::before {
-    color: $blue;
+    color: $orange;
   }
 
   &:active::before {
-    color: $dark-blue;
+    color: $dark-orange;
   }
 }
 

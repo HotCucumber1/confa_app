@@ -56,6 +56,9 @@
         {% endcall %}
     {% endif %}
 
+    {% if events_by_month %}
+            <h2>Events</h2>
+    {% endif %}
     <div class="event-list"
          data-show-future-events-url="{{ url_for('.show_future_events', category) }}"
          data-show-past-events-url="{{ url_for('.show_past_events', category) }}">
@@ -126,7 +129,7 @@
                                 {% endif %}
 
                                 {% if is_recent(event.created_dt) %}
-                                    <span class="ui label mini blue"
+                                    <span class="ui label mini orange"
                                           title="{% trans %}This event is new.{% endtrans %}">
                                         {%- trans %}new{% endtrans -%}
                                     </span>

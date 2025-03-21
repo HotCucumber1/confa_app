@@ -7,7 +7,7 @@
 
 @use 'base' as *;
 
-$i-button-background-color: darken($light-gray, 5%);
+$i-button-background-color: $light-gray;
 $i-button-spacing: 0.3rem;
 
 @mixin button {
@@ -104,15 +104,6 @@ $i-button-spacing: 0.3rem;
       border-color: $border-accent-color;
       color: $font-accent-color;
     }
-
-    &:hover {
-      @include gradient($flavor-color, $flavor-darkened-color);
-    }
-
-    &:active,
-    &.open {
-      @include gradient($flavor-darkened-color, $flavor-color);
-    }
   }
 }
 
@@ -155,13 +146,11 @@ $i-button-spacing: 0.3rem;
   @include _i-button-borderless($light-black, $black);
   @include _i-button-outlines($light-black, $black);
   margin: 0;
-  padding: 4px 10px 4px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   white-space: nowrap;
 
-  & ~ .i-button,
   & ~ .group {
     margin-left: $i-button-spacing;
   }
@@ -182,7 +171,7 @@ $i-button-spacing: 0.3rem;
 
   &[class*='icon-'] {
     &::before {
-      font-size: 1.2em;
+      font-size: 1em;
     }
 
     &:not(:empty)::before {
@@ -199,7 +188,7 @@ $i-button-spacing: 0.3rem;
   }
 
   &.highlight {
-    @include i-button-flavor($blue, $dark-blue);
+    @include i-button-flavor($orange, $orange);
   }
 
   &.warning {
@@ -352,7 +341,7 @@ button::-moz-focus-inner {
 }
 
 .i-button > [class*='icon-']::before {
-  font-size: 1.2em;
+  font-size: 15px;
   vertical-align: -15%;
 }
 

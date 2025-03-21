@@ -52,14 +52,12 @@
 .category-header {
   grid-area: hd;
   display: flex;
-  justify-content: space-between;
+  justify-content: right;
   align-items: center;
   flex-wrap: wrap;
   gap: 1em;
 
-  background-image: linear-gradient(to bottom, #fcfcfc, #f2f2f2);
-  border-bottom: 1px solid #e6e6e6;
-  border-top: 1px solid #fff;
+  background-color: $white;
   padding: 1.5em var(--horizontal-padding);
   line-height: initial;
 
@@ -243,7 +241,7 @@
 
 .main-page-list {
   a {
-    color: $dark-blue;
+    color: $dark-orange;
   }
 
   li {
@@ -283,8 +281,7 @@ ul.category-list {
   list-style-type: none;
   padding: 0;
 
-  border-left: 1px solid #fafafa;
-  border-right: 1px solid #e6e6e6;
+  gap: 10px;
 
   li {
     @include transition(color);
@@ -293,14 +290,16 @@ ul.category-list {
     -moz-user-select: none;
     user-select: none;
 
-    background: #f2f2f2;
+    background: $white;
     display: block;
     line-height: 2.5em;
     color: #b3b3b3;
     cursor: pointer;
+    margin-top: 4px;
 
     border-top: 1px solid #fafafa;
     border-bottom: 1px solid #e6e6e6;
+    box-shadow: 0 7px 17px #42484E29;
 
     .number-events {
       float: right;
@@ -317,7 +316,7 @@ ul.category-list {
     a {
       @include transition(color);
       display: block;
-      color: lighten($dark-blue, 6%);
+      color: $light-black;
       padding: 0 0 0 1em;
 
       &.invisible-block {
@@ -329,10 +328,10 @@ ul.category-list {
     }
 
     &:hover {
-      color: $light-black;
+      color: $black;
 
       a {
-        color: darken($dark-blue, 6%);
+        color: darken($black, 6%);
       }
 
       &::before {
@@ -394,7 +393,6 @@ ul.category-resource-qtip {
         color: #2f2506;
         background-color: #f6e8bd;
         border-radius: 5px 5px 0 0;
-        border-bottom: 1px solid #aaa;
       }
     }
   }
@@ -458,6 +456,7 @@ ul.category-resource-qtip {
     .ui.label {
       text-transform: uppercase;
       vertical-align: 20%;
+      background-color: $orange !important;
     }
   }
 }
@@ -615,7 +614,7 @@ ul.category-resource-qtip {
       max-width: 220px;
       text-overflow: ellipsis;
       overflow: hidden;
-      color: darkblue;
+      color: darkorange;
     }
 
     .persons {

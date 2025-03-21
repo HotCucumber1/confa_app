@@ -160,7 +160,7 @@
             opacity: 0.6;
 
             &:hover {
-              color: $blue;
+              color: $orange;
             }
           }
 
@@ -581,7 +581,7 @@ th.i-table {
 .event-settings {
   @include border-all($gray);
 
-  background: rgba($light-blue, 0.2);
+  background: rgba($light-orange, 0.2);
 
   & > .section {
     margin-left: -10px;
@@ -740,11 +740,11 @@ form.horizontal .clone-event-dialog-footer .form-field {
 .import-event-title {
   margin-top: 0.6em;
   font-weight: bold;
-  color: $dark-blue;
+  color: $dark-orange;
 }
 
 .import-event-dates {
-  color: $dark-blue;
+  color: $dark-orange;
 }
 
 .list.registrations .i-dropdown .icon-id-badge::before {

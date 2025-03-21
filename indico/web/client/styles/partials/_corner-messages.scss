@@ -89,10 +89,10 @@
   }
 
   &.highlight {
-    @include _progress($pastel-blue, $light-blue);
+    @include _progress($pastel-orange, $light-orange);
     color: $light-black;
-    background-color: $light-blue;
-    border-color: $dark-blue;
+    background-color: $light-orange;
+    border-color: $dark-orange;
   }
 
   .corner-message-text,

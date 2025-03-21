@@ -1,3 +1,5 @@
+{% from 'events/management/_create_event_button.html' import create_event_button %}
+
 <div class="main-breadcrumb {{ 'management' if management }}"
      itemprop="breadcrumb" itemscope itemtype="http://schema.org/Breadcrumb">
     <span class="path" itemscope itemtype="http://schema.org/BreadcrumbList">
@@ -26,4 +28,9 @@
             {%- endif -%}
         {% endfor %}
     </span>
+    <div class="container">
+        {{ create_event_button('', classes="create-event", text=_("Create event"), with_tooltip=false) }}
+        <a href="/" class="button">Home</a>
+        <a href="/user/dashboard" class="button">My Profile</a>
+    </div>
 </div>

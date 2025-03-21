@@ -166,21 +166,24 @@ div.main-breadcrumb {
 
   background-color: darken($light-gray, 5%);
   border-bottom: 1px solid $gray;
-  padding: 0.6em 0 0.6em 40px;
+  padding: 14px 32px 14px 24px;
 
   &.management {
     background-color: #fff;
   }
 
   .path {
+    * {
+      font-size: 15px;
+      line-height: 20px;
+    }
+
     .sep {
       color: $dark-gray;
-      padding: 0 0.5em;
     }
 
     .item {
       color: $light-black;
-      font-size: 12px;
     }
 
     a.item:hover {

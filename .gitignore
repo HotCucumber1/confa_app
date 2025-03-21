@@ -52,3 +52,5 @@ htmlcov/
 # node/webpack
 webpack-build-config.json
 *.lock
+
+maildump/

@@ -153,6 +153,11 @@ i[class^='icon-']::before {
 %icon-bullhorn {
   content: '\e90e';
 }
+.icon-calendar {
+  display: flex;
+  justify-content: center;
+  color: #42484E;
+}
 .icon-calendar::before,
 %icon-calendar {
   content: '\e90f';
@@ -397,6 +402,11 @@ i[class^='icon-']::before {
 %icon-handle {
   content: '\e949';
 }
+.icon-home {
+  display: flex;
+  justify-content: center;
+  color: #42484E;
+}
 .icon-home::before,
 %icon-home {
   content: '\e94a';
@@ -416,6 +426,11 @@ i[class^='icon-']::before {
 .icon-import::before,
 %icon-import {
   content: '\e94d';
+}
+.icon-info {
+  display: flex;
+  justify-content: center;
+  color: #42484E;
 }
 .icon-info::before,
 %icon-info {
@@ -456,6 +471,11 @@ i[class^='icon-']::before {
 .icon-list::before,
 %icon-list {
   content: '\e957';
+}
+.icon-location {
+  display: flex;
+  justify-content: center;
+  color: #42484E;
 }
 .icon-location::before,
 %icon-location {
@@ -696,6 +716,11 @@ i[class^='icon-']::before {
 .icon-upload::before,
 %icon-upload {
   content: '\e993';
+}
+.icon-user {
+  display: flex;
+  justify-content: center;
+  color: #42484E;
 }
 .icon-user::before,
 %icon-user {

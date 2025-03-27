@@ -52,6 +52,8 @@ dl.i-data-list {
   color: $light-black;
   margin-top: 1em;
   line-height: 1.5;
+  display: flex;
+  flex-direction: column;
 
   dt,
   dd {
@@ -67,7 +69,6 @@ dl.i-data-list {
   dt {
     font-weight: bold;
     text-align: right;
-    width: 20%;
   }
 
   dd {

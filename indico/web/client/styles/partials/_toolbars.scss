@@ -20,7 +20,7 @@ $toolbar-spacing: 10px;
   @include toolbar-group-slider();
   @extend .flexrow;
 
-  & ~ .i-button {
+  &~.i-button {
     margin-left: buttons.$i-button-spacing;
   }
 
@@ -31,7 +31,7 @@ $toolbar-spacing: 10px;
 
     // i-button flavors don't change border color on hover
     &:not(.label):not(.accept):not(.danger):not(.highlight):not(.warning):not(.disabled):not(:disabled) {
-      &:hover + .i-button {
+      &:hover+.i-button {
         border-left-color: $gray;
       }
     }
@@ -42,7 +42,7 @@ $toolbar-spacing: 10px;
     }
   }
 
-  & > .i-button:not(.hidden) {
+  &>.i-button:not(.hidden) {
     &:first-child {
       border-bottom-left-radius: $default-border-radius;
       border-top-left-radius: $default-border-radius;
@@ -61,7 +61,7 @@ $toolbar-spacing: 10px;
         border-right: none !important;
       }
 
-      & ~ .i-button:not(.hidden):first-child {
+      &~.i-button:not(.hidden):first-child {
         border-bottom-left-radius: 0;
         border-top-left-radius: 0;
       }
@@ -85,11 +85,11 @@ $toolbar-spacing: 10px;
 @mixin toolbar-group-inputs {
   label.i-button {
     &:not(.label) {
-      &:hover ~ .i-button {
+      &:hover~.i-button {
         border-left-color: $gray;
       }
 
-      &:hover ~ .i-button ~ .i-button {
+      &:hover~.i-button~.i-button {
         border-left-color: $default-border-color;
       }
     }
@@ -98,37 +98,37 @@ $toolbar-spacing: 10px;
   input[type='radio']:first-child,
   input[type='text']:first-child,
   input[type='password']:first-child {
-    + .i-button {
+    +.i-button {
       border-bottom-left-radius: $default-border-radius;
       border-top-left-radius: $default-border-radius;
     }
   }
 
-  > .clearableinput {
+  >.clearableinput {
     float: left;
   }
 
-  > input[type='text']:first-child,
-  > input[type='password']:first-child,
-  > .clearableinput:first-child input[type='text'] {
+  >input[type='text']:first-child,
+  >input[type='password']:first-child,
+  >.clearableinput:first-child input[type='text'] {
     border-bottom-right-radius: $default-border-radius;
     border-top-right-radius: $default-border-radius;
   }
 
-  > input[type='text']:last-child,
-  > input[type='password']:last-child,
-  > .clearableinput:last-child input[type='text'] {
+  >input[type='text']:last-child,
+  >input[type='password']:last-child,
+  >.clearableinput:last-child input[type='text'] {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
   }
 
-  > input[type='text']:not(:last-child),
-  > input[type='password']:not(:last-child),
-  > .clearableinput:not(:last-child) {
+  >input[type='text']:not(:last-child),
+  >input[type='password']:not(:last-child),
+  >.clearableinput:not(:last-child) {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
 
-    & + .i-button {
+    &+.i-button {
       border-left: none;
       border-bottom-left-radius: 0;
       border-top-left-radius: 0;
@@ -217,7 +217,7 @@ $toolbar-spacing: 10px;
       height: $toolbar-thin-height;
     }
 
-    :not(.ui) > input[type='text'] {
+    :not(.ui)>input[type='text'] {
       height: $toolbar-thin-height;
     }
   }
@@ -234,14 +234,13 @@ $toolbar-spacing: 10px;
     }
   }
 
-  & > .option {
+  &>.option {
     line-height: 2.5em;
     margin-right: 1em;
   }
 
   .i-button {
     height: $toolbar-height;
-    padding: 0.2em 0.7em 0.1em 0.7em !important;
 
     &:not(.label) {
       font-weight: bold;
@@ -253,7 +252,7 @@ $toolbar-spacing: 10px;
     }
   }
 
-  :not(.ui) > input[type='text'] {
+  :not(.ui)>input[type='text'] {
     color: $black;
     display: inline-block;
     float: left;
@@ -265,7 +264,7 @@ $toolbar-spacing: 10px;
   .i-dropdown {
     z-index: 3;
 
-    & > li {
+    &>li {
       white-space: nowrap;
     }
   }

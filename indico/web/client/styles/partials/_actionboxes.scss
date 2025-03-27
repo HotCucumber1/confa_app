@@ -20,7 +20,7 @@
   padding: 10px;
   width: 100%;
 
-  > .section {
+  >.section {
     @include clearfix();
     @extend .flexrow;
 
@@ -31,7 +31,7 @@
       align-items: flex-start;
     }
 
-    > .toolbar {
+    >.toolbar {
       margin: 0;
       padding: 0 0 0 0.5em;
       flex-shrink: 0;
@@ -46,27 +46,27 @@
         line-height: 2.2em;
       }
 
-      > .group {
+      >.group {
         margin-bottom: 0;
       }
     }
 
-    &:not(:first-child) {
-      margin-top: 5px;
-      padding-top: 5px;
-      border-top: 1px solid $gray;
-    }
+    margin-top: 5px;
+    padding: 13px;
+    border-radius: 10px;
+    border-width: 1px;
+    border: 1px solid #D9D9D9
   }
 
-  > .section > .text {
+  >.section>.text {
     flex-grow: 1;
 
-    > .label {
+    >.label {
       font-weight: bold;
     }
   }
 
-  > .section > .icon {
+  >.section>.icon {
     font-size: 2rem;
     padding-right: 0.5rem;
     flex-shrink: 0;
@@ -78,7 +78,7 @@
     }
   }
 
-  .section > .sui-icon-wrapper {
+  .section>.sui-icon-wrapper {
     padding-right: 0.5rem;
 
     i.icon {
@@ -94,7 +94,7 @@
   color: $color;
 
   .section:not(.highlight):not(.warning):not(.danger):not(.disabled):not(.accept):not(.plain) {
-    > .icon {
+    >.icon {
       color: $emphasis-color;
     }
 
@@ -102,7 +102,7 @@
       color: $emphasis-color;
     }
 
-    > .sui-icon-wrapper {
+    >.sui-icon-wrapper {
       color: $emphasis-color;
     }
   }
@@ -114,56 +114,44 @@
 
 .action-box {
   @include action-box();
-  @include action-box-colors(
-    $color: $dark-gray,
+  @include action-box-colors($color: $dark-gray,
     $emphasis-color: $light-black,
     $background-color: $light-gray,
-    $border-color: $dark-gray
-  );
+    $border-color: $dark-gray );
 
   &.highlight {
-    @include action-box-colors(
-      $color: $light-black,
+    @include action-box-colors($color: $light-black,
       $emphasis-color: $blue,
       $background-color: $light-blue,
-      $border-color: $blue
-    );
+      $border-color: $blue );
   }
 
   &.warning {
-    @include action-box-colors(
-      $color: $dark-gray,
+    @include action-box-colors($color: $dark-gray,
       $emphasis-color: $yellow,
       $background-color: $light-yellow,
-      $border-color: $yellow
-    );
+      $border-color: $yellow );
   }
 
   &.danger {
-    @include action-box-colors(
-      $color: $light-black,
+    @include action-box-colors($color: $light-black,
       $emphasis-color: $red,
       $background-color: $light-red,
-      $border-color: $red
-    );
+      $border-color: $red );
   }
 
   &.disabled {
-    @include action-box-colors(
-      $color: $light-black,
+    @include action-box-colors($color: $light-black,
       $emphasis-color: $black,
       $background-color: $pastel-gray,
-      $border-color: $black
-    );
+      $border-color: $black );
   }
 
   &.accept {
-    @include action-box-colors(
-      $color: $light-black,
+    @include action-box-colors($color: $light-black,
       $emphasis-color: $green,
       $background-color: $light-green,
-      $border-color: $green
-    );
+      $border-color: $green );
   }
 
   &.plain {

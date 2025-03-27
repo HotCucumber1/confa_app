@@ -187,7 +187,7 @@
   @include indico-page();
 
   div.page-content {
-    @extend .fixed-width;
+    padding-inline: 130px;
   }
 
   &.wide {
@@ -221,7 +221,7 @@
   // which is rather small
   @extend .fixed-width-standalone-page;
 
-  width: 800px;
+  // width: 800px;
 
   .page-content {
     max-width: 800px;

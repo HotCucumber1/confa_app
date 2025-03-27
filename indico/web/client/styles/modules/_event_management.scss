@@ -18,6 +18,26 @@
     .group {
       margin-bottom: 0;
     }
+
+    .label-edit-button {
+      height: 29;
+      border-radius: 5px;
+      padding: 5px 13.5px;
+      font-family: 'Stem';
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 18.99px;
+      letter-spacing: 0%;
+      text-align: center;
+      color: #42484E;
+      background-color: #F2F2F2;
+    }
+
+    .button-hidden {
+      width: 0px;
+      visibility: hidden;
+      padding: 0px !important;
+    }
   }
 
   .clones a {
@@ -53,18 +73,21 @@
   width: 650px;
 
   .i-table-widget {
+
     // date
     th:nth-child(2),
-        td:nth-child(2),
-        // download
-        th:nth-child(4),
-        td:nth-child(4) {
+    td:nth-child(2),
+    // download
+    th:nth-child(4),
+    td:nth-child(4) {
       text-align: center;
     }
+
     // date
     td:nth-child(2) {
       color: $dark-gray;
     }
+
     // status
     th:nth-child(3),
     td:nth-child(3) {
@@ -81,7 +104,7 @@
   width: 650px;
 }
 
-#menu-entries > .menu-entries {
+#menu-entries>.menu-entries {
   padding-top: 0;
 }
 
@@ -91,15 +114,15 @@
 
   list-style: none;
 
-  > li {
+  >li {
     margin-top: 5px;
 
     &:first-child {
       margin-top: 0;
     }
 
-    > .menu-entry {
-      > .i-label {
+    >.menu-entry {
+      >.i-label {
         margin: 0;
         width: 100%;
         text-align: left;
@@ -110,28 +133,28 @@
           cursor: move;
         }
 
-        > * {
+        >* {
           line-height: 1.2em;
           height: 1.2em;
           vertical-align: middle;
         }
 
-        > .entry-internal_link,
-        > .entry-user_link,
-        > .entry-plugin_link {
+        >.entry-internal_link,
+        >.entry-user_link,
+        >.entry-plugin_link {
           @include icon-before('icon-link');
         }
 
-        > .entry-page {
+        >.entry-page {
           @include icon-before('icon-file');
         }
 
-        > .entry-separator {
+        >.entry-separator {
           @include icon-before('icon-arrows-vert');
         }
 
         /* menu title */
-        > .title {
+        >.title {
           @include ellipsis();
 
           flex: 1;
@@ -143,7 +166,7 @@
           }
         }
 
-        > .actions {
+        >.actions {
           max-width: 33%;
           margin-right: -5px;
 
@@ -153,7 +176,7 @@
             outline: none;
           }
 
-          > * {
+          >* {
             padding: 0 2px;
 
             color: $dark-gray;
@@ -164,7 +187,7 @@
             }
           }
 
-          > .enabled {
+          >.enabled {
             @include enabled-action();
 
             &:hover {
@@ -172,7 +195,7 @@
             }
           }
 
-          > .not-enabled {
+          >.not-enabled {
             @include not-enabled-action();
             opacity: 1;
 
@@ -181,21 +204,21 @@
             }
           }
 
-          > .default {
+          >.default {
             @include icon-before('icon-home');
             color: #46f936 !important;
             opacity: 1;
           }
 
-          > .not-default {
+          >.not-default {
             @include icon-before('icon-home');
           }
 
-          > .edit-entry {
+          >.edit-entry {
             @include icon-before('icon-edit');
           }
 
-          > .delete-entry {
+          >.delete-entry {
             @include icon-before('icon-remove');
 
             &:hover {
@@ -209,7 +232,7 @@
             color: $light-black;
           }
 
-          > .actions > * {
+          >.actions>* {
             color: $light-black;
           }
         }
@@ -219,7 +242,7 @@
             color: white;
           }
 
-          > .actions > * {
+          >.actions>* {
             color: white;
 
             &:hover {
@@ -228,12 +251,12 @@
           }
         }
 
-        &:hover > .actions {
-          > * {
+        &:hover>.actions {
+          >* {
             opacity: 1;
           }
 
-          > .not-default {
+          >.not-default {
             display: inline !important;
           }
         }
@@ -247,14 +270,14 @@
     }
   }
 
-  > .ui-sortable-helper:first-child + .menu-entry-placeholder,
-  > .menu-entry-placeholder:first-child {
+  >.ui-sortable-helper:first-child+.menu-entry-placeholder,
+  >.menu-entry-placeholder:first-child {
     margin-top: 0;
     margin-bottom: -2px;
   }
 
   &.empty,
-  &.hide-placeholder > li.menu-entry-placeholder {
+  &.hide-placeholder>li.menu-entry-placeholder {
     display: none;
   }
 
@@ -279,12 +302,12 @@
 
 // sub list of entries
 .menu-entry {
-  > .menu-entries {
+  >.menu-entries {
     margin-left: 20px;
     padding-right: 0;
     padding-left: 10px;
 
-    > li > .menu-entry > .i-label {
+    >li>.menu-entry>.i-label {
       font-weight: normal;
       margin: 0;
     }
@@ -296,7 +319,7 @@
   }
 }
 
-.info-message-box > .message-text > i.icon-grid2 {
+.info-message-box>.message-text>i.icon-grid2 {
   font-size: 0.7em;
 }
 
@@ -377,7 +400,7 @@ form#upload-images.full-width .dropzone {
 // Event actions
 
 .confirm-delete-block {
-  > * {
+  >* {
     vertical-align: middle;
     font-size: 1.1em;
   }
@@ -410,22 +433,29 @@ th.i-table {
   dl.i-data-list {
     margin-top: 0;
     margin-bottom: 0.2em;
+    gap: 10px;
 
-    dd {
-      padding: 0;
-      margin-bottom: 0.1em;
-    }
+    .i-data-list-item {
+      display: flex;
+      justify-content: space-between;
 
-    dt {
-      margin-bottom: 0.1em;
-      padding: 0;
-      text-align: left;
+      dd {
+        padding: 0;
+        margin-bottom: 0.1em;
+      }
+
+      dt {
+        margin-bottom: 0.1em;
+        padding: 0;
+        text-align: left;
+      }
     }
   }
 }
 
 .event-person-list,
 .event-roles {
+
   .name-column,
   .affiliation-column,
   .email-column {
@@ -486,12 +516,12 @@ th.i-table {
     display: block;
   }
 
-  tbody > tr:not(.hidden) {
+  tbody>tr:not(.hidden) {
     td {
       border-top-width: 0;
     }
 
-    ~ tr td {
+    ~tr td {
       border-top-width: 1px;
     }
   }
@@ -579,29 +609,51 @@ th.i-table {
 }
 
 .event-settings {
-  @include border-all($gray);
-
+  border: none;
   background: rgba($light-blue, 0.2);
+  box-shadow: 0px 7px 17px 1px #42484E29;
+  padding: 35px 132px;
 
-  & > .section {
-    margin-left: -10px;
-    margin-right: -10px;
-    padding-left: 10px;
-    padding-right: 10px;
+  &>.section {
+    // margin-left: -10px;
+    // margin-right: -10px;
+    padding: 14px;
     overflow: visible;
+    display: flex;
+    gap: 40px;
 
-    & > .icon {
+    &>.icon {
       align-self: flex-start;
       color: $dark-gray !important;
     }
 
-    .text {
-      width: 80%;
+    .icon-with-button {
+      margin-top: 10px;
     }
-
+    
     .text,
     .toolbar {
       align-self: flex-start;
+
+      .label-edit-button {
+        height: 29;
+        border-radius: 5px;
+        padding: 5px 13.5px;
+        font-family: 'Stem';
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18.99px;
+        letter-spacing: 0%;
+        text-align: center;
+        color: #42484E;
+        background-color: #F2F2F2;
+      }
+
+      .button-hidden {
+        width: 0px;
+        visibility: hidden;
+        padding: 0px !important;
+      }
     }
 
     &:not(:first-child) {
@@ -613,6 +665,42 @@ th.i-table {
   dl.i-data-list {
     color: $light-black;
     margin: 0;
+    gap: 10px;
+
+    .i-data-list-item {
+      display: flex;
+      width: 460px;
+      justify-content: space-between;
+
+      dd {
+        width: 350px;
+        height: 42px;
+        top: 13px;
+        left: 239px;
+        border-radius: 5px;
+        border-width: 0.77px;
+        padding: 10px;
+        font-family: 'Stem';
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18.99px;
+        letter-spacing: 0%;
+        text-align: center;
+        border: 0.77px solid #ADAEAF;
+        text-align: start;
+      }
+
+      dt {
+        font-family: 'Stem';
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 120%;
+        letter-spacing: 0%;
+        color: #42484E;
+        display: flex;
+        align-items: center;
+      }
+    }
 
     dt,
     dd {
@@ -632,7 +720,6 @@ th.i-table {
 
       .no-value {
         color: $gray;
-        font-style: italic;
       }
 
       .event-label {
@@ -660,8 +747,9 @@ th.i-table {
 }
 
 form.horizontal .clone-event-dialog-content {
+
   .i-checkbox,
-  .form-checkbox-label > label {
+  .form-checkbox-label>label {
     font-size: 1.1em;
 
     &.checkbox-disabled {

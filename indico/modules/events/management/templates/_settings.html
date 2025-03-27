@@ -18,20 +18,25 @@
 {% macro render_section(event, name, icon, edit_endpoint, edit_title, with_container=true) %}
     {% set id = section_id(name) %}
     {% if with_container %}<div class="section" id="{{ id }}">{% endif %}
-        <div class="icon {{ icon }}"></div>
+        <div class="icon icon-with-button">
+            <div class="{{ icon }}"></div>
+            <div class="toolbar">
+                <button id="edit-button" class="i-button borderless text-color icon-only hide-if-locked button-hidden"
+                        title="{{ edit_title }}"
+                        data-href="{{ url_for(edit_endpoint, event) }}"
+                        data-title="{{ edit_title }}"
+                        data-form-container="#{{ section_id(name) }} > .text"
+                        data-update='{"settings_box": "#{{ id }}",
+                                      "right_header": "#event-management-header-right"}'
+                        data-ajax-form></button>
+                <label for="edit-button" class="label-edit-button">
+                    Edit
+                </label>
+            </div>
+        </div>
         <div class="text">
             {{ caller() }}
             {{ template_hook('event-settings-section-extra', event=event, section=name) }}
-        </div>
-        <div class="toolbar">
-            <button class="i-button borderless text-color icon-only icon-edit hide-if-locked"
-                    title="{{ edit_title }}"
-                    data-href="{{ url_for(edit_endpoint, event) }}"
-                    data-title="{{ edit_title }}"
-                    data-form-container="#{{ section_id(name) }} > .text"
-                    data-update='{"settings_box": "#{{ id }}",
-                                  "right_header": "#event-management-header-right"}'
-                    data-ajax-form></button>
         </div>
     {% if with_container %}</div>{% endif %}
 {% endmacro %}
@@ -41,26 +46,32 @@
     {% call render_section(event, 'data', 'icon-home', '.edit_data', _('Edit basic event data'),
                            with_container=with_container) %}
         <dl class="i-data-list">
-            <dt>{% trans %}Title{% endtrans %}</dt>
-            <dd>{{ event.title }}</dd>
+            <div class="i-data-list-item">
+                <dt>{% trans %}Title{% endtrans %}</dt>
+                <dd>{{ event.title }}</dd>
+            </div>
 
-            <dt>{% trans %}Description{% endtrans %}</dt>
-            <dd>{{ with_default(event.description|striptags)|truncate(200) }}</dd>
+            <div class="i-data-list-item">
+                <dt>{% trans %}Description{% endtrans %}</dt>
+                <dd>{{ with_default(event.description|striptags)|truncate(200) }}</dd>
+            </div>
 
-            <dt>{% trans %}Short URL{% endtrans %}</dt>
-            <dd>
-                {% call with_default() %}
-                    {% if event.url_shortcut %}
-                        <a href="{{ event.short_external_url }}"
-                           class="js-copy-to-clipboard"
-                           title="{% trans %}Copy link to clipboard{% endtrans %}"
-                           data-clipboard-text="{{ event.short_external_url }}"
-                           data-clipboard-action="copy">
-                            {{ event.short_external_url }}
-                        </a>
-                    {% endif %}
-                {% endcall %}
-            </dd>
+            <div class="i-data-list-item">
+                <dt>{% trans %}Short URL{% endtrans %}</dt>
+                <dd>
+                    {% call with_default() %}
+                        {% if event.url_shortcut %}
+                            <a href="{{ event.short_external_url }}"
+                               class="js-copy-to-clipboard"
+                               title="{% trans %}Copy link to clipboard{% endtrans %}"
+                               data-clipboard-text="{{ event.short_external_url }}"
+                               data-clipboard-action="copy">
+                                {{ event.short_external_url }}
+                            </a>
+                        {% endif %}
+                    {% endcall %}
+                </dd>
+            </div>
         </dl>
     {% endcall %}
 {% endmacro %}
@@ -72,22 +83,28 @@
         {% set tz = event.tzinfo %}
 
         <dl class="i-data-list">
-            <dt>{% trans %}Date{% endtrans %}</dt>
-            <dd>
-                {% if event.start_dt.astimezone(tz).date() == event.end_dt.astimezone(tz).date() %}
-                    {{ event.start_dt|format_date('long', timezone=tz) }}
-                {% else %}
-                    {{ event.start_dt|format_date(timezone=tz) }} - {{ event.end_dt|format_date(timezone=tz) }}
-                {% endif %}
-            </dd>
+            <div class="i-data-list-item">
+                <dt>{% trans %}Date{% endtrans %}</dt>
+                <dd>
+                    {% if event.start_dt.astimezone(tz).date() == event.end_dt.astimezone(tz).date() %}
+                        {{ event.start_dt|format_date('long', timezone=tz) }}
+                    {% else %}
+                        {{ event.start_dt|format_date(timezone=tz) }} - {{ event.end_dt|format_date(timezone=tz) }}
+                    {% endif %}
+                </dd>
+            </div>
+            <div class="i-data-list-item">
+                <dt>{% trans %}Time{% endtrans %}</dt>
+                <dd>{{ event.start_dt|format_time(timezone=tz) }} - {{ event.end_dt|format_time(timezone=tz) }}</dd>
+            </div>
 
-            <dt>{% trans %}Time{% endtrans %}</dt>
-            <dd>{{ event.start_dt|format_time(timezone=tz) }} - {{ event.end_dt|format_time(timezone=tz) }}</dd>
-
-            <dt>{% trans %}Timezone{% endtrans %}</dt>
-            <dd>{{ event.timezone }}</dd>
+            <div class="i-data-list-item">
+                <dt>{% trans %}Timezone{% endtrans %}</dt>
+                <dd>{{ event.timezone }}</dd>
+            </div>
 
             {% if event.type == 'conference' %}
+            <div class="i-data-list-item">
                 <dt>{% trans %}Screen dates{% endtrans %}</dt>
                 <dd>
                     {% if event.start_dt_override or event.end_dt_override %}
@@ -97,6 +114,7 @@
                         {{ with_default() }}
                     {% endif %}
                 </dd>
+            </div>
             {% endif %}
     {% endcall %}
 {% endmacro %}
@@ -107,17 +125,25 @@
                            with_container=with_container) %}
         {% block render_location_data scoped %}
             <dl class="i-data-list">
-                <dt>{% trans %}Room{% endtrans %}</dt>
-                <dd>{{ with_default(event.room_name) }}</dd>
+                <div class="i-data-list-item">
+                    <dt>{% trans %}Room{% endtrans %}</dt>
+                    <dd>{{ with_default(event.room_name) }}</dd>
+                </div>
 
-                <dt>{% trans %}Venue{% endtrans %}</dt>
-                <dd>{{ with_default(event.venue_name) }}</dd>
+                <div class="i-data-list-item">
+                    <dt>{% trans %}Venue{% endtrans %}</dt>
+                    <dd>{{ with_default(event.venue_name) }}</dd>
+                </div>
 
-                <dt>{% trans %}Address{% endtrans %}</dt>
-                <dd>{{ with_default(event.address|replace('\n', '<br>'|safe)) }}</dd>
+                <div class="i-data-list-item">
+                    <dt>{% trans %}Address{% endtrans %}</dt>
+                    <dd>{{ with_default(event.address|replace('\n', '<br>'|safe)) }}</dd>
+                </div>
 
-                <dt>{% trans %}Map URL{% endtrans %}</dt>
-                <dd class="break-word">{{ with_default(event.map_url) }}</dd>
+                <div class="i-data-list-item">
+                    <dt>{% trans %}Map URL{% endtrans %}</dt>
+                    <dd class="break-word">{{ with_default(event.map_url) }}</dd>
+                </div>
             </dl>
         {% endblock %}
 
@@ -141,25 +167,27 @@
     {% call render_section(event, 'persons', 'icon-user', '.edit_persons', edit_persons_title,
                            with_container=with_container) %}
         <dl class="i-data-list">
-            <dt>
-                {%- if event.type == 'lecture' -%}
-                    {% trans %}Speakers{% endtrans %}
-                {%- else -%}
-                    {% trans %}Chairpersons{% endtrans %}
-                {%- endif -%}
-            </dt>
-            <dd>
-                {% call with_default() %}
-                    {% for event_person_link in event.person_links | sort(attribute='display_order_key') %}
-                        <div>
-                            <span>{{ event_person_link.display_full_name }}</span>
-                            {% if event_person_link.is_submitter %}
-                                <span class="badge">{% trans %}Submitter{% endtrans %}</span>
-                            {% endif %}
-                        </div>
-                    {% endfor %}
-                {% endcall %}
-            </dd>
+            <div class="i-data-list-item">
+                <dt>
+                    {%- if event.type == 'lecture' -%}
+                        {% trans %}Speakers{% endtrans %}
+                    {%- else -%}
+                        {% trans %}Chairpersons{% endtrans %}
+                    {%- endif -%}
+                </dt>
+                <dd>
+                    {% call with_default() %}
+                        {% for event_person_link in event.person_links | sort(attribute='display_order_key') %}
+                            <div>
+                                <span>{{ event_person_link.display_full_name }}</span>
+                                {% if event_person_link.is_submitter %}
+                                    <span class="badge">{% trans %}Submitter{% endtrans %}</span>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    {% endcall %}
+                </dd>
+            </div>
         </dl>
     {% endcall %}
 {% endmacro %}
@@ -170,42 +198,55 @@
                            with_container=with_container) %}
         <dl class="i-data-list">
             {% if event.type == 'lecture' %}
+            <div class="i-data-list-item">
                 <dt>{% trans %}Organizer{% endtrans %}</dt>
                 <dd>{{ with_default(event.organizer_info|truncate(200)) }}</dd>
+            </div>
             {% endif %}
 
             {% if event.type == 'conference' %}
+            <div class="i-data-list-item">
                 <dt>{% trans %}Additional info{% endtrans %}</dt>
                 <dd>{{ with_default(event.additional_info|striptags|truncate(200)) }}</dd>
+            </div>
             {% endif %}
 
-            <dt>{% trans %}Contact title{% endtrans %}</dt>
-            <dd>{{ with_default(event.contact_title) }}</dd>
+            <div class="i-data-list-item">
+                <dt>{% trans %}Contact title{% endtrans %}</dt>
+                <dd>{{ with_default(event.contact_title) }}</dd>
+            </div>
 
-            <dt>{% trans %}Email{% endtrans %}</dt>
-            <dd>{{ with_default(event.contact_emails|join(', ')) }}</dd>
+            <div class="i-data-list-item">
+                <dt>{% trans %}Email{% endtrans %}</dt>
+                <dd>{{ with_default(event.contact_emails|join(', ')) }}</dd>
+            </div>
 
-            <dt>{% trans %}Phone{% endtrans %}</dt>
-            <dd>{{ with_default(event.contact_phones|join(', ')) }}</dl>
+            <div class="i-data-list-item">
+                <dt>{% trans %}Phone{% endtrans %}</dt>
+                <dd>{{ with_default(event.contact_phones|join(', ')) }}</dl>
+            </div>
         </dl>
     {% endcall %}
 {% endmacro %}
 
 
 {% macro render_section_classification(event, has_reference_types, has_event_labels, with_container=true) %}
-    {% set edit_cls_title = _('Edit keywords / references / label') if event.type == 'meeting' else _('Edit keywords / label') %}
-    {% call render_section(event, 'classification', 'icon-tag', '.edit_classification', edit_cls_title,
-                           with_container=with_container) %}
-        <dl class="i-data-list">
-            <dt>{% trans %}Keywords{% endtrans %}</dt>
-            <dd>
-                {% call with_default() %}
-                    {% for keyword in event.keywords %}
-                        <span class="badge">{{ keyword }}</span>
-                    {% endfor %}
-                {% endcall %}
-            </dd>
+    <!-- {% set edit_cls_title = _('Edit keywords / references / label') if event.type == 'meeting' else _('Edit keywords / label') %} -->
+    <!-- {% call render_section(event, 'classification', 'icon-tag', '.edit_classification', edit_cls_title,
+                           with_container=with_container) %} -->
+        <!-- <dl class="i-data-list">
+            <div class="i-data-list-item">
+                <dt>{% trans %}Keywords{% endtrans %}</dt>
+                <dd>
+                    {% call with_default() %}
+                        {% for keyword in event.keywords %}
+                            <span class="badge">{{ keyword }}</span>
+                        {% endfor %}
+                    {% endcall %}
+                </dd>
+            </div>
             {% if event.type == 'meeting' and has_reference_types %}
+            <div class="i-data-list-item">
                 <dt>{% trans %}External IDs{% endtrans %}</dt>
                 <dd>
                     {% call with_default() %}
@@ -218,8 +259,10 @@
                         {% endif %}
                     {% endcall %}
                 </dd>
+            </div>
             {% endif %}
             {% if has_event_labels %}
+            <div class="i-data-list-item">
                 <dt>{% trans %}Label{% endtrans %}</dt>
                 <dd>
                     {% call with_default() %}
@@ -233,24 +276,31 @@
                         </p>
                     {% endif %}
                 </dd>
+            </div>
             {% endif %}
-        </dl>
+        </dl> -->
     {% endcall %}
 {% endmacro %}
 
 
 {% macro render_section_languages(event, with_container=true) %}
-    {% call render_section(event, 'languages', 'icon-bubble-quote', '.edit_languages', _('Edit supported languages'),
-                           with_container=with_container) %}
-        <dl class="i-data-list">
-            <dt>{% trans %}Default language{% endtrans %}</dt>
-            <dd>{{ with_default(event.default_language) }}</dd>
+    <!-- {% call render_section(event, 'languages', 'icon-bubble-quote', '.edit_languages', _('Edit supported languages'),
+                           with_container=with_container) %} -->
+        <!-- <dl class="i-data-list">
+            <div class="i-data-list-item">
+                <dt>{% trans %}Default language{% endtrans %}</dt>
+                <dd>{{ with_default(event.default_language) }}</dd>
+            </div>
 
-            <dt>{% trans %}Enforce language{% endtrans %}</dt>
-            <dd>{{ _('Yes') if event.enforce_locale else _('No') }}</dd>
+            <div class="i-data-list-item">
+                <dt>{% trans %}Enforce language{% endtrans %}</dt>
+                <dd>{{ _('Yes') if event.enforce_locale else _('No') }}</dd>
+            </div>
 
-            <dt>{% trans %}Additional languages{% endtrans %}</dt>
-            <dd>{{ with_default(event.supported_languages|join(', ')) }}</dd>
+            <div class="i-data-list-item">
+                <dt>{% trans %}Additional languages{% endtrans %}</dt>
+                <dd>{{ with_default(event.supported_languages|join(', ')) }}</dd>
+            </div>
         </dl>
         <script>
             (() => {
@@ -275,7 +325,7 @@
                         disableDefaultLocale();
                     });
             })();
-        </script>
+        </script> -->
     {% endcall %}
 {% endmacro %}
 

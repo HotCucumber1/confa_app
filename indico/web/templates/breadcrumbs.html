@@ -3,7 +3,7 @@
     <span class="path" itemscope itemtype="http://schema.org/BreadcrumbList">
         {% for item in items %}
             {%- if not loop.first -%}
-                <span class="sep">»</span>
+                <span class="sep">></span>
             {%- endif -%}
             {%- if item.url -%}
                 <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">

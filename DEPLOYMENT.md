@@ -94,7 +94,7 @@ python --version  # Python 3.12.2
 
 ## 4. Собрать виртуальное окружение проекта
 ```bash
-# перейти в дирректорию проекта
+# перейти в директорию проекта
 cd </path/to/my/projects/confa_app>
 
 pyenv local 3.12
@@ -103,7 +103,7 @@ python -m venv .venv
 
 ## 5. Собрать виртуальное окружение для maildump
 ```bash
-# перейти в дирректорию проекта
+# перейти в директорию проекта
 cd </path/to/my/projects/confa_app>
 
 python -m venv maildump
@@ -197,6 +197,12 @@ indico i18n compile indico
 Если на этапе сборки `wizard` был указан не `localhost` или `127.0.0.1`, то вместо localhost надо указать свой адрес
 ```bash
 indico run -h localhost -q --enable-evalex
+```
+
+## 11. Миграции
+Если падают ошибки sqlalchemy, скорее всего нужно промигрировать до актуального состояния
+```bash
+indico db upgrade
 ```
 
 

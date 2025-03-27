@@ -77,11 +77,11 @@
         }
 
         > a.icon-file-word {
-          @include colored-icon($dark-blue);
+          @include colored-icon($dark-orange);
         }
 
         > a.icon-file-image {
-          @include colored-icon($blue);
+          @include colored-icon($orange);
         }
 
         > a.icon-calendar {
@@ -147,7 +147,7 @@
 
             &.icon-edit:hover::before,
             &.icon-file-download:hover::before {
-              color: $blue;
+              color: $orange;
             }
           }
         }
@@ -263,11 +263,11 @@
 }
 
 .attachment.icon-file-word {
-  @include colored-icon($dark-blue);
+  @include colored-icon($dark-orange);
 }
 
 .attachment.icon-file-image {
-  @include colored-icon($blue);
+  @include colored-icon($orange);
 }
 
 .attachment.icon-calendar {

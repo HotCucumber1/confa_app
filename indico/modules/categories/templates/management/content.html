@@ -52,7 +52,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="group">
+            <div class="group" style="gap: 5px;">
                 {{ create_category_button(category, classes='highlight icon-plus') }}
                 {% if not has_events %}
                     {{ create_event_button(category, text=_("Create event")) }}

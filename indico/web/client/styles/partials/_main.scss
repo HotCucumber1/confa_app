@@ -80,13 +80,15 @@
 
 div.page-header {
   position: relative;
-  background-color: $dark-blue;
+  background-color: $white;
   width: 100%;
+  border-bottom: 1px solid $confa-border-gray;
 
   img.header-logo {
     margin: 17px 0 10px 40px;
     border: none;
-    height: 60px;
+    height: 19px;
+    width: 180px;
   }
 }
 
@@ -120,11 +122,11 @@ div.announcement-bar {
     color: $dark-black;
 
     .icon {
-      color: $blue;
+      color: $orange;
     }
 
     .close-button {
-      color: $dark-blue;
+      color: $dark-orange;
     }
   }
 
@@ -164,27 +166,50 @@ div.announcement-bar {
 div.main-breadcrumb {
   @include font-family-title();
 
-  background-color: darken($light-gray, 5%);
-  border-bottom: 1px solid $gray;
-  padding: 0.6em 0 0.6em 40px;
+  border-bottom: 1px solid $confa-border-gray;
+  padding: 14px 32px 14px 24px;
 
   &.management {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background-color: #fff;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .container {
+    display: flex;
+    gap: 10px;
+  }
+
+  .create-event {
+    padding: 8px 12px;
+    color: #fff;
+    background-color: #FA5D20;
+    border: none;
+    height: 40px;
+    font-weight: 600;
+  }
+
+  .button {
+    color: #24272A;
+    background-color: #F2F2F2;
+    padding: 8px 35px;
+    border-radius: 4px;
+    border: 0.8px solid #F2F2F2;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
   }
 
   .path {
-    .sep {
-      color: $dark-gray;
-      padding: 0 0.5em;
-    }
-
-    .item {
-      color: $light-black;
-      font-size: 12px;
-    }
-
-    a.item:hover {
-      color: $dark-blue;
+    * {
+      font-size: 15px;
+      color: #42484E99;
+      line-height: 20px;
+      font-weight: 600;
     }
   }
 }
@@ -194,7 +219,7 @@ div.main-breadcrumb {
 div.session-bar {
   @include font-family-title();
 
-  margin: 0.5em 0.5em 0 0;
+  margin-right: 40px;
 
   .toolbar {
     padding: 0;

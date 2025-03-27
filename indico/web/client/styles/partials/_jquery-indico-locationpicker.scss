@@ -108,8 +108,8 @@
       }
 
       &:focus {
-        box-shadow: 0 0 5px $blue;
-        @include border-all($color: $blue !important, $width: 1px);
+        box-shadow: 0 0 5px $orange;
+        @include border-all($color: $orange !important, $width: 1px);
       }
 
       &::-ms-clear {
@@ -164,11 +164,11 @@
         }
 
         &.info {
-          @include border-all($blue);
+          @include border-all($orange);
           background-color: $light-blue;
 
           .icon {
-            color: $blue;
+            color: $orange;
           }
         }
 

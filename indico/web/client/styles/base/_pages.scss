@@ -129,7 +129,7 @@
   @extend .flexrow;
 
   $banner-color: #000;
-  $banner-title-color: $dark-orange;
+  $banner-title-color: $light-black;
   $banner-subtitle-color: $dark-gray;
   $banner-title-margin: 19px;
 
@@ -255,7 +255,7 @@
   margin: 2em auto 0 auto;
 
   h1 {
-    color: $dark-blue;
+    color: $dark-orange;
   }
 }
 

@@ -58,3 +58,6 @@ webpack-build-config.json
 requirements.txt
 package.json
 package-lock.json
+
+# maildump
+/maildump

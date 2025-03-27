@@ -66,7 +66,7 @@ DEFAULTS = {
     'LOCAL_REGISTRATION': True,
     'LOCAL_GROUPS': True,
     'LOGGING_CONFIG_FILE': 'logging.yaml',
-    'LOGIN_LOGO_URL': None,
+    'LOGIN_LOGO_URL': '/images/src/ispring-logo.svg',
     'LOGO_URL': None,
     'LOG_DIR': '/opt/indico/log',
     'MAX_DATA_EXPORT_SIZE': 10 * 1024,  # 10GB

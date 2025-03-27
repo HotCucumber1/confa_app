@@ -60,7 +60,7 @@ def _check_signup(form, field):
 
 
 class LocalLoginForm(IndicoForm):
-    identifier = StringField(_('Username or email'), [DataRequired()], filters=[_tolower])
+    identifier = StringField(_('Username'), [DataRequired()], filters=[_tolower])
     password = PasswordField(_('Password'), [DataRequired()])
 
     def __init__(self, *args, **kwargs):

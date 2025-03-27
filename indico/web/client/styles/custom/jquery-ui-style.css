@@ -17,7 +17,6 @@
 
 .ui-dialog {
   width: auto !important;
-  padding: 0;
 }
 
 .ui-dialog .ui-dialog-buttonpane {
@@ -29,6 +28,8 @@
 
 .ui-dialog .ui-dialog-title {
   max-width: 800px;
+  float: none;
+  margin-top: 30px;
 }
 
 .ui-dialog-content {
@@ -96,10 +97,9 @@
 }
 
 .ui-dialog-titlebar {
-  border-bottom: 1px solid #ccc !important;
-  font-weight: normal;
-  font-size: 17px;
-  background-color: #fcfcfc !important;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .ui-dialog-titlebar-close:not(.ui-state-hover) {

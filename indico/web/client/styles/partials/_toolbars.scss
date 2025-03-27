@@ -10,7 +10,7 @@
 @use 'base/defaults' as *;
 @use './buttons' as buttons;
 
-$toolbar-height: 2.2em;
+$toolbar-height: 36px;
 $toolbar-thin-height: 1.9em;
 $toolbar-spacing: 10px;
 
@@ -25,7 +25,7 @@ $toolbar-spacing: 10px;
   }
 
   .i-button {
-    border-radius: 0;
+    border-radius: $default-border-radius;
     border-right-width: 0;
     margin: 0;
 
@@ -192,6 +192,7 @@ $toolbar-spacing: 10px;
   flex-shrink: 0;
   align-items: center;
   min-height: $toolbar-height;
+  gap: 10px;
 
   &.fixed-height {
     max-height: 1.75rem;

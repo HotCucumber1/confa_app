@@ -69,7 +69,7 @@
   }
 
   .designer-item {
-    border: 1px dashed $dark-blue;
+    border: 1px dashed $dark-orange;
     line-height: initial;
 
     &.selected {
@@ -164,7 +164,7 @@
   }
 
   &#form-group-margin_rows .form-label {
-    color: $dark-blue;
+    color: $dark-orange;
   }
 }
 
@@ -179,7 +179,7 @@
 
   &.template-icon-badge {
     @include icon-before('icon-id-badge');
-    color: $blue;
+    color: $orange;
   }
 }
 
@@ -361,14 +361,14 @@
 
   &.default-on-category {
     opacity: 1;
-    color: $blue;
+    color: $orange;
 
     &.inherited {
       opacity: 0.6;
       cursor: default;
 
       &:hover {
-        color: $blue;
+        color: $orange;
       }
     }
 
@@ -376,7 +376,7 @@
       cursor: default;
 
       &:hover {
-        color: $blue;
+        color: $orange;
       }
     }
   }

@@ -128,8 +128,8 @@ $switch-inner-shadow: inset 0 0 0.4em $switch-shadow-color;
 
         & + .switch-handle {
           left: 50%;
-          background-color: $blue;
-          box-shadow: $switch-shadow-border $dark-blue, $switch-left-shadow;
+          background-color: $orange;
+          box-shadow: $switch-shadow-border $dark-orange, $switch-left-shadow;
         }
       }
     }
@@ -162,8 +162,8 @@ $switch-inner-shadow: inset 0 0 0.4em $switch-shadow-color;
       }
 
       &:checked + .switch-label:hover + .switch-handle {
-        background: darken($blue, $color-variation);
-        @include gradient($blue, darken($blue, $color-variation));
+        background: darken($orange, $color-variation);
+        @include gradient($orange, darken($orange, $color-variation));
       }
     }
   }

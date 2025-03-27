@@ -88,10 +88,10 @@
   .add-occurrence {
     display: inline-block;
     margin-top: 0.25em;
-    color: $blue;
+    color: $orange;
 
     &:hover {
-      color: $dark-blue;
+      color: $dark-orange;
       cursor: pointer;
     }
   }

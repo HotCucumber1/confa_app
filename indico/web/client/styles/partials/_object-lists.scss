@@ -175,15 +175,15 @@
       flex-grow: 1;
 
       &:not(.striped) {
-        border-color: $dark-blue;
-        color: $dark-blue !important;
+        border-color: $dark-orange;
+        color: $dark-orange !important;
 
         + .filter {
-          border-color: $dark-blue;
+          border-color: $dark-orange;
         }
 
         > .title {
-          color: $dark-blue;
+          color: $dark-orange;
         }
       }
 

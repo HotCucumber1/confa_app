@@ -8,22 +8,20 @@
 @use 'base' as *;
 @use 'partials/boxes' as *;
 
+$dialog-border-radius: 15px;
+
 .ui-widget-content {
   color: $black;
 }
 
 .ui-corner-all {
-  @include default-border-radius();
+  border-radius: $dialog-border-radius;
 
   .ui-dialog-content {
     /* For some reason the dialogs don't get their bottom corners rounded without this. */
-    border-bottom-left-radius: $default-border-radius;
-    border-bottom-right-radius: $default-border-radius;
+    border-bottom-left-radius: $dialog-border-radius;
+    border-bottom-right-radius: $dialog-border-radius;
   }
-}
-
-.ui-dialog {
-  box-shadow: 0 0 24px rgba(0, 0, 0, 0.3);
 }
 
 .ui-dialog .dropdown .menu {
@@ -65,7 +63,7 @@
   }
 
   .ui-slider-range {
-    background: $blue !important;
+    background: $orange !important;
   }
 }
 

@@ -18,15 +18,15 @@
       width: 10em;
       min-height: 7em;
 
-      @include badges.i-badge-color($light-blue, $dark-blue, $light-gray, true);
+      @include badges.i-badge-color($light-blue, $dark-orange, $light-gray, true);
 
       &.i-badge-disabled {
         background: repeating-linear-gradient(
           -40deg,
-          $dark-blue,
-          $dark-blue 10px,
-          lighten($dark-blue, 0.5 * $light-color-variation) 10px,
-          lighten($dark-blue, 0.5 * $light-color-variation) 20px
+          $dark-orange,
+          $dark-orange 10px,
+          lighten($dark-orange, 0.5 * $light-color-variation) 10px,
+          lighten($dark-orange, 0.5 * $light-color-variation) 20px
         );
       }
     }

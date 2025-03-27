@@ -16,14 +16,14 @@ const Palette = {
   red: '#f91f1f',
   green: '#00c851',
   purple: '#6e5494',
-  orange: '#f80',
+  orange: '#fa5d20',
   olive: '#b5cc18',
   black: '#555',
   indicoBlue: '#00a4e4',
 };
 
 // colors for specific purposes
-Palette.highlight = Palette.blue;
+Palette.highlight = Palette.orange;
 
 export const SUIPalette = {
   red: Translate.string('Red'),

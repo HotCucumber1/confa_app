@@ -24,7 +24,7 @@
   }
 
   &.weekend {
-    background-color: lighten($blue, 55%);
+    background-color: lighten($orange, 55%);
   }
 }
 
@@ -62,7 +62,7 @@
   &.weekend {
     .timeline-label-text {
       font-weight: bold;
-      color: lighten($blue, 30%);
+      color: lighten($orange, 30%);
     }
   }
 }

@@ -7,8 +7,6 @@
     <a class="i-button text-color subtle icon-home" href="{{ url_for_index() }}"
        title="{% trans %}Go to the Indico Home Page{% endtrans %}"></a>
 
-    <span class="separator"></span>
-
     {% if rel.first is not none %}
         <a class="i-button text-color subtle icon-first" href="{{ url_for('events.display', event_id=rel.first) }}"
            title="{% trans %}Oldest event{% endtrans %}"></a>
@@ -34,9 +32,6 @@
            title="{% trans %}Newest event{% endtrans %}"></a>
     {% endif %}
 
-    {% if event.category or rel.first or rel.prev or rel.next or rel.last %}
-        <span class="separator"></span>
-    {% endif %}
 {%- endmacro -%}
 
 
@@ -221,13 +216,11 @@
 
                 {{ _render_theme_selector() }}
                 {% if session.user %}
-                    <span class="separator"></span>
 
                     <div id="favorite-link" data-event-id="{{ event.id }}"
                         {{ 'data-favorited' if event in session.user.favorite_events }}></div>
                 {% endif %}
 
-                <span class="separator"></span>
             {% endif %}
 
             {{ template_hook('url-shortener', event=event, classes='i-button text-color subtle icon-link') }}
@@ -239,7 +232,6 @@
             {% endblock %}
 
             {% if event.type == 'conference' and theme %}
-                <span class="separator"></span>
                 <a href="{{ event.url }}" class="i-button text-color subtle">
                     {%- trans %}Back to Conference View{% endtrans -%}
                 </a>

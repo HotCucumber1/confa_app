@@ -14,6 +14,8 @@
 
 /*     this is the wrapper of whole conference page */
 
+@use 'base/palette' as *;
+
 .conf {
   width: 100%;
   border: none;
@@ -49,7 +51,7 @@
   color: white;
   min-height: 90px;
   text-align: left;
-  background: #1a64a0;
+  background: $orange;
 }
 
 .confTitle {
@@ -160,7 +162,6 @@ div.event-details {
   display: block;
   text-decoration: none;
 
-  font-family: verdana, arial, sans-serif;
   font-size: 10pt;
 }
 
@@ -225,7 +226,6 @@ li.menuConfMiddleCell a {
 /* For dynamic menu */
 
 .inner {
-  font-family: arial, sans-serif;
   top: 0;
   position: relative;
   list-style-image: none;
@@ -282,7 +282,6 @@ li.over ul {
 .col2 {
   width: 100%;
   float: left;
-  font-family: verdana, arial, sans-serif;
 }
 
 /* ------Misc------ */
@@ -326,7 +325,6 @@ pre {
   background: #f5faff url(static:images/conf/sprites_orange.png) repeat-x scroll 0 -400px;
   border-top: 1px solid #c2d6e7;
   padding: 8px 0;
-  font-family: Verdana, sans-serif;
   font-weight: bold;
   font-size: 10pt;
   text-align: center;

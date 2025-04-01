@@ -1109,7 +1109,7 @@ type(
       this.warningArea = this._createInfoArea();
       this.warningArea.dom.style.display = 'none';
 
-      this.menu = $('<div class="group"/>');
+      this.menu = $('<div class="group" style="gap: 10px"/>');
 
       if (this.isSessionTimetable && this.isTopLevel) {
         if (this.canManageBlocks) {

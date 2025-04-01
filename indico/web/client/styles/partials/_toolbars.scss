@@ -28,6 +28,7 @@ $toolbar-spacing: 10px;
     border-radius: $default-border-radius;
     border-right-width: 0;
     margin: 0;
+    padding: 10px 15px;
 
     // i-button flavors don't change border color on hover
     &:not(.label):not(.accept):not(.danger):not(.highlight):not(.warning):not(.disabled):not(:disabled) {

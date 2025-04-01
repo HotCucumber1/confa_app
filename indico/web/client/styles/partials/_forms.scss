@@ -32,6 +32,7 @@ $i-form-button-line-height: 1.8;
 @mixin form-field-button {
   height: $i-form-height;
   font-weight: bold;
+  padding: 10px 15px;
 }
 
 form {

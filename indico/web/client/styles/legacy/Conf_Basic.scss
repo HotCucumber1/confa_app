@@ -86,7 +86,7 @@
   width: 950px;
   margin: 0 auto;
   font-size: 11pt;
-  color: #24425a;
+  color: $black;
 }
 
 .confSubTitle a {
@@ -186,7 +186,8 @@ div.event-details {
 }
 
 .menuConfTitle a {
-  color: #275c86;
+  color: $black;
+  font-weight: bold;
   padding: 7px 12px;
 }
 

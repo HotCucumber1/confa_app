@@ -132,11 +132,7 @@ $(document).ready(function() {
                 $(this).qtip('destroy');
               },
 
-              render: function(event, api) {
-                $target.on('DOMNodeRemovedFromDocument remove', function() {
-                  api.destroy();
-                });
-              },
+
             },
 
             hide: {

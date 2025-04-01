@@ -56,7 +56,7 @@ DEFAULTS = {
     'EXTERNAL_REGISTRATION_URL': None,
     'HELP_URL': 'https://learn.getindico.io',
     'FAILED_LOGIN_RATE_LIMIT': '5 per 15 minutes; 10 per day',
-    'FAVICON_URL': None,
+    'FAVICON_URL': '/images/src/ispring-favicon.svg',
     'IDENTITY_PROVIDERS': {},
     'LATEX_RATE_LIMIT': '2 per 3 seconds',
     'LOCAL_IDENTITIES': True,

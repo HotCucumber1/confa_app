@@ -45,7 +45,7 @@ DEFAULTS = {
     'CUSTOM_LANGUAGES': {},
     'DB_LOG': False,
     'DEBUG': False,
-    'DEFAULT_LOCALE': 'en_GB',
+    'DEFAULT_LOCALE': 'ru_RU',
     'DEFAULT_TIMEZONE': 'UTC',
     'DISABLE_CELERY_CHECK': None,
     'EMAIL_BACKEND': 'indico.vendor.django_mail.backends.smtp.EmailBackend',

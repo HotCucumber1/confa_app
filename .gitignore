@@ -58,3 +58,4 @@ package-lock.json
 
 # maildump
 /maildump
+.jinja2-navigator

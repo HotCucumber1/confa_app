@@ -5,9 +5,11 @@
         {% block cat_toolbar %}
             <div id="category-toolbar" class="toolbar">
                 <div class="group">
-                    {% block cat_create_event %}
-                        {{ create_event_button(category, classes="highlight", text=_("Create event"), with_tooltip=false) }}
-                    {% endblock %}
+                    {% if session.user.is_admin %}
+                        {% block cat_create_event %}
+                            {{ create_event_button(category, classes="highlight", text=_("Создать событие"), with_tooltip=false) }}
+                        {% endblock %} 
+                    {% endif %}
                 </div>
                 <div class="group">
                     {% block cat_navigate %}

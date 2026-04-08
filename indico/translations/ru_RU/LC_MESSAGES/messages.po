@@ -12809,11 +12809,6 @@ msgstr ""
 
 #: indico/modules/events/abstracts/templates/reviewing/public.html
 #, python-format
-msgid "The abstract was accepted for track %(track)s and a %(link_start)scontribution%(link_end)s was created in the event."
-msgstr "Тезисы были приняты к треку %(track)s, и на мероприятии был создан вклад %(link_start)s."
-
-#: indico/modules/events/abstracts/templates/reviewing/public.html
-#, python-format
 msgid "The abstract was accepted and a %(link_start)scontribution%(link_end)s was created in the event."
 msgstr "Тезисы были приняты, и на мероприятии был создан вклад %(link_start)scontribution%(link_end)s."
 
@@ -21825,11 +21820,15 @@ msgstr "Дата/Время"
 
 #: indico/modules/events/templates/display/conference.html
 msgid "Starts"
-msgstr "Начинается"
+msgstr "Начало"
+
+#: indico/modules/events/templates/display/conference.html
+msgid "Place"
+msgstr "Место"
 
 #: indico/modules/events/templates/display/conference.html
 msgid "Ends"
-msgstr "Заканчивается"
+msgstr "Конец"
 
 #: indico/modules/events/templates/display/conference.html
 msgid "Go to map"
